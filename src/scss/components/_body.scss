@@ -1,0 +1,36 @@
+@use '../base/variables' as *;
+@use '../utilities/mixins' as *;
+
+body {
+  font-family: $site-font;
+  background-color: $dark-grey;
+  color: $light;
+  line-height: $site-line-height;
+
+  .site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  a {
+    text-decoration: none;
+    color: $light;
+  }
+
+  a:visited,
+  a:focus {
+    text-decoration: none;
+  }
+
+  p {
+    font-size: $standard-font-size;
+  }
+
+  main {
+    max-width: $main-max-width;
+    @include margin-center;
+    padding: 0 $base-spacing;
+    flex: 1 1 auto;
+  }
+}

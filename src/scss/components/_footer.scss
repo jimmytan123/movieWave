@@ -1,0 +1,15 @@
+@use '../base/variables' as *;
+@use '../utilities/mixins' as *;
+
+footer {
+    padding: $small-spacing $base-spacing;
+    background-color: $black;
+    text-align: center;
+
+    p {
+        margin: $small-spacing;
+        font-size: 0.8rem;
+    }
+
+    border-top: 2px dashed $light-grey;
+}

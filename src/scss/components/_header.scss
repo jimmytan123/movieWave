@@ -1,0 +1,49 @@
+//header styles
+@use '../base/variables' as *;
+@use '../utilities/mixins' as *;
+
+header {
+  background-color: $black;
+  position: relative;
+
+  .top-bar {
+    @include flex-layout-row-between;
+    padding: $base-spacing;
+
+    a.site-logo {
+      font-size: $medium-font-size;
+      font-family: $logo-font;
+
+      .logo-m {
+        color: $site-orange;
+      }
+
+      .logo-w {
+        color: $site-blue;
+      }
+    }
+
+    button {
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+
+      svg {
+        fill: $light;
+        display: block;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-mobile) {
+    .top-bar {
+      a.site-logo {
+        font-size: $large-font-size;
+      }
+    }
+  }
+}

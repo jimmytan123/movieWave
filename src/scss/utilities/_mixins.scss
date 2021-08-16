@@ -1,0 +1,47 @@
+//centering an element (wrapper)
+@mixin margin-center {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+//styles for unordered list
+@mixin ul-base {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+//mixins for flex layout
+
+//centering elements in a flex container
+@mixin flex-layout-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+//mixins for creating a flex row of evenly spaced elements
+@mixin flex-layout-row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@mixin flex-layout-column-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+//mixins for basic buttons in the site
+@mixin basic-button-style {
+  padding: 1rem;
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-weight: 700;
+}

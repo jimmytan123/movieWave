@@ -1,0 +1,17 @@
+//Imports 
+
+//Normalize(resets)
+@use './base/normalize';
+
+//variables and mixins
+@use './base/variables';
+@use './utilities/mixins';
+
+//application components
+@use './components/body';
+@use './components/header';
+@use './components/btn-main-nav';
+@use './components/main-nav';
+
+
+@use './components/footer';

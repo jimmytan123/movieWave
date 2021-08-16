@@ -1,0 +1,77 @@
+//styline for main nav list
+@use '../base/variables' as *;
+@use '../utilities/mixins' as *;
+
+.main-nav {
+  width: 100%;
+  @include flex-layout-column-center;
+  text-align: center;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: all 0.4s;
+
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.9);
+
+  ul {
+    @include ul-base;
+  }
+
+  a {
+    display: inline-block;
+    margin: $base-spacing $small-spacing;
+    color: $light;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s;
+
+    &.active {
+      color: $site-orange;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $site-blue;
+    }
+  }
+
+  .show & {
+    height: 168px;
+    visibility: visible;
+    transition: all 0.4s;
+  }
+
+  @media (min-width: $breakpoint-mobile) {
+    visibility: visible;
+    transition: none;
+    height: auto;
+    width: auto;
+
+    position: relative;
+    top: 0;
+  
+    .show & {
+      transition: none;
+      height: auto;
+    }
+
+    ul {
+      display: flex;
+    }
+
+    a {
+      margin: 0 $base-spacing;
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    a {
+      margin: 0 $medium-spacing;
+    }
+  }
+}

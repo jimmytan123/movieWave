@@ -1,0 +1,40 @@
+//basic variables for application
+
+//font and font size
+//Google Fonts Import
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@300;400;700&display=swap');
+
+$site-font: 'Roboto', sans-serif;
+$logo-font: 'Archivo Black', sans-serif;
+
+
+$standard-font-size: 1rem;
+$medium-font-size: 1.5rem;
+$large-font-size: 2rem;
+
+$site-line-height: 1.5;
+
+//colors
+$site-blue: #00C4FF;
+$site-orange: #FF983D;
+$pink: #f400a3;
+$light-grey: #454545;
+$dark-grey: #2A292A;
+$black: #000;
+$light: #f4f4f4;
+
+//common spacing
+$small-spacing: 0.5rem;
+$base-spacing: 1rem;
+$medium-spacing: 1.5rem;
+$double-spacing: 2rem;
+
+
+//max width for <main>
+$main-max-width: 1920px;
+
+//media query breakpoints
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-desktop-lg: 1200px;
