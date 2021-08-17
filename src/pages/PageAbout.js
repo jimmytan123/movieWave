@@ -1,13 +1,15 @@
 import { useEffect } from "react";
+import { appTitle } from '../globals/globalVariables';
+
 
 const PageAbout = () => {
 
   useEffect(() => {
-    document.title = 'MovieWave - About';
+    document.title = `${appTitle} - About`;
 }, []);
 
   return (
-    <section className='about-section'>
+    <main className='about-main-section'>
       <p>This is the about page</p>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta officia
@@ -18,7 +20,7 @@ const PageAbout = () => {
         officiis tempora dolor recusandae esse laudantium a quibusdam pariatur
         quia minima cupiditate. Iusto?
       </p>
-    </section>
+    </main>
   );
 };
 

@@ -2,11 +2,11 @@
 
 //font and font size
 //Google Fonts Import
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@300;400;600&display=swap');
 
-$site-font: 'Roboto', sans-serif;
+$site-font: 'Montserrat', sans-serif;
+
 $logo-font: 'Archivo Black', sans-serif;
-
 
 $standard-font-size: 1rem;
 $medium-font-size: 1.5rem;
@@ -15,11 +15,11 @@ $large-font-size: 2rem;
 $site-line-height: 1.5;
 
 //colors
-$site-blue: #00C4FF;
-$site-orange: #FF983D;
+$site-blue: #00c4ff;
+$site-orange: #ff983d;
 $pink: #f400a3;
 $light-grey: #454545;
-$dark-grey: #2A292A;
+$dark-grey: #262525;
 $black: #000;
 $light: #f4f4f4;
 
@@ -28,7 +28,6 @@ $small-spacing: 0.5rem;
 $base-spacing: 1rem;
 $medium-spacing: 1.5rem;
 $double-spacing: 2rem;
-
 
 //max width for <main>
 $main-max-width: 1920px;

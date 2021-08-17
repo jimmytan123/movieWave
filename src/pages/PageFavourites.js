@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
+import { appTitle } from '../globals/globalVariables';
+
 
 const PageFavourites = () => {
   useEffect(() => {
-    document.title = 'MovieWave - Favourites';
+    document.title = `${appTitle} - Favourites`;
   }, []);
 
   return (
-    <section className='favourites-section'>
+    <main className='favourites-main-section'>
       <p>This is the favourites page</p>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. At repudiandae
@@ -14,7 +16,7 @@ const PageFavourites = () => {
         corrupti accusamus? Accusantium harum tempora officia alias totam rem
         quo nulla enim.
       </p>
-    </section>
+    </main>
   );
 };
 
