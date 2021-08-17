@@ -12,6 +12,7 @@
 
     @media (min-width: $breakpoint-tablet) {
         grid-template-columns: repeat(3, 1fr);
+        gap: $medium-spacing;
     }
 
     @media (min-width: $breakpoint-desktop) {

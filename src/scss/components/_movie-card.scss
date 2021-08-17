@@ -13,6 +13,8 @@
     
     img {
         display: block;
+        width: 100%;
+        border-radius: 5px;
     }
 
     .movie-card-content {
@@ -22,7 +24,7 @@
 
     h2 {
         font-size: 1.2rem;
-        margin-top: $small-spacing;
+        margin-top: $base-spacing;
     }
 
     .poster-wrapper {

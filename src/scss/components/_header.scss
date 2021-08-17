@@ -9,6 +9,8 @@ header {
   .top-bar {
     @include flex-layout-row-between;
     padding: $base-spacing;
+    max-width: 2200px;
+    margin: 0 auto;
 
     a.site-logo {
       font-size: $medium-font-size;
