@@ -31,7 +31,7 @@ const PageHome = () => {
         console.log(data.results);
         setMovies(data.results);
       } catch (err) {
-        alert(err);
+        console.log(err.message);
       }
     };
 
