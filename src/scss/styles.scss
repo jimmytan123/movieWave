@@ -1,9 +1,9 @@
-//Imports 
+//Main Styling Imports 
 
 //Normalize(resets)
 @use './base/normalize';
 
-//variables and mixins
+//Utilities
 @use './base/variables';
 @use './utilities/mixins';
 
@@ -16,5 +16,5 @@
 @use './components/movies-grid';
 @use './components/movie-card';
 @use './components/change-page-btn';
-
+@use './components/single-movie';
 @use './components/footer';

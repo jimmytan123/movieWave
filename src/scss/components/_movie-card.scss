@@ -42,7 +42,8 @@
     margin: 0;
     padding: 0.2rem 0.8rem;
     background-color: rgba(0, 0, 0, 0.7);
-    border-top-left-radius: 6px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 
   .poster-overlay {
@@ -53,6 +54,7 @@
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
     text-align: center;
     overflow: hidden;
     opacity: 0;
@@ -88,7 +90,7 @@
     }
   }
 
-  .movie-card-content:hover .poster-overlay {
+  .poster-wrapper:hover .poster-overlay {
     opacity: 1;
   }
 }

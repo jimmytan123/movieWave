@@ -1,0 +1,14 @@
+@use '../base/variables' as *;
+@use '../utilities/mixins' as *;
+
+.single-movie {
+    margin: $base-spacing $small-spacing;
+    background-color: $dark-grey;
+    padding: $base-spacing;
+
+    img {
+        display: block;
+        width: 100%;
+        border-radius: 5px;
+      }
+}

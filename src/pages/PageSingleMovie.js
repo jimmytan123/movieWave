@@ -33,7 +33,7 @@ const PageSingleMovie = () => {
 
   return (
     <main className="singleMovie-main-section">
-      {movieData && <SingleMovie />}
+      {movieData && <SingleMovie movie={movieData} />}
     </main>
   );
 };

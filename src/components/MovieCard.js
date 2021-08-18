@@ -1,6 +1,7 @@
 import { posterEndPoint } from '../globals/globalVariables';
-import noPoster from '../images/no-poster-holder.png';
 import { Link } from 'react-router-dom';
+import noPoster from '../images/no-poster-holder.png';
+import { unFilledHeartIcon } from '../globals/icon';
 
 const MovieCard = ({ movie }) => {
   return (
@@ -36,6 +37,8 @@ const MovieCard = ({ movie }) => {
           </div>
         </div>
         <h3>{movie.title}</h3>
+        {/* for testing */}
+        <span style={{ cursor: 'pointer' }}>{unFilledHeartIcon()}</span>
       </div>
     </div>
   );

@@ -12,6 +12,10 @@ header {
     max-width: 1800px;
     margin: 0 auto;
 
+    h1 {
+      margin: 0;
+    }
+
     a.site-logo {
       font-size: $medium-font-size;
       font-family: $logo-font;

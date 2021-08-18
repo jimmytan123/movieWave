@@ -26,10 +26,13 @@ const Header = () => {
   return (
     <header className={navOpen ? 'show' : 'undefined'}>
       <div className="top-bar">
-        <Link to="/" className="site-logo">
-          <span className="logo-m">M</span>ovie<span className="logo-w">W</span>
-          ave
-        </Link>
+        <h1>
+          <Link to="/" className="site-logo">
+            <span className="logo-m">M</span>ovie
+            <span className="logo-w">W</span>
+            ave
+          </Link>
+        </h1>
         <button
           onClick={handleClick}
           className="btn-main-nav"
