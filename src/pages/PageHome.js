@@ -6,7 +6,7 @@ import ChangePageBtn from '../components/ChangePageBtn';
 
 const PageHome = () => {
   const [sort, setSort] = useState('popular');
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(null);
   const [displayTitle, setDisplayTitle] = useState('Popular');
   const [pages, setPages] = useState(1);
 
@@ -76,12 +76,12 @@ const PageHome = () => {
         displayTitle={displayTitle}
         handleSortChange={handleSortChange}
       />
-      <Movies movies={movies} />
+      {movies && <Movies movies={movies} />}
       <ChangePageBtn
         pages={pages}
         handleNextPage={handleNextPage}
         handlePreviousPage={handlePreviousPage}
-        maxPages={6}
+        maxPages={5}
       />
     </main>
   );

@@ -2,47 +2,92 @@
 @use '../utilities/mixins' as *;
 
 .single-movie-card {
+  @include margin-center;
+  background-color: $dark-grey;
+  margin-top: $base-spacing;
+  margin-bottom: $base-spacing;
+  padding-top: $base-spacing;
+  border-radius: 12px;
+
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .movie-card-content {
+    width: 88%;
     @include margin-center;
-    background-color: $dark-grey;
-    margin-top: $base-spacing;
-    margin-bottom: $base-spacing;
-    padding-top: $base-spacing;
-    border-radius: 12px;
+  }
 
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;    
-    
-    img {
-        display: block;
-        width: 100%;
-        border-radius: 5px;
+  h3 {
+    font-size: 1rem;
+    margin-top: 0.9rem;
+  }
+
+  .poster-wrapper {
+    position: relative;
+  }
+
+  .rating-score {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: $site-blue;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 0.2rem 0.8rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top-left-radius: 6px;
+  }
+
+  .poster-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s;
+
+    p {
+      font-size: 0.8rem;
+
+      &.hover-release-date {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+      }
+
+      &.hover-movie-overview {
+        text-align: left;
+        margin: 0.5rem;
+      }
+
+      @media (min-width: 1600px) {
+        font-size: 0.95rem;
+        &.hover-movie-overview {
+          margin: 0.8rem;
+        }
+      }
     }
 
-    .movie-card-content {
-        width: 88%;
-        @include margin-center;
+    a {
+      padding: 0.3rem 0.5rem;
+      background-color: $site-blue;
+      border-radius: 6px;
+      font-weight: 600;
     }
+  }
 
-    h3 {
-        font-size: 1rem;
-        margin-top: 0.9rem;
-    }
-
-    .poster-wrapper {
-        position: relative;
-
-    }
-
-    .rating-score {
-        font-weight: 700;
-        font-size: 1.2rem;
-        color: $site-blue;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        margin: 0;
-        padding: 0.2rem 0.8rem;
-        background-color: rgba(0,0,0,0.7);
-        border-top-left-radius: 6px;
-    }
-
+  .movie-card-content:hover .poster-overlay {
+    opacity: 1;
+  }
 }
