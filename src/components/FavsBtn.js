@@ -14,12 +14,10 @@ const FavsBtn = ({ movie, className, checkFav }) => {
 
   const handleRemoveFav = () => {
     globalActions.removeFav(movie.id);
-    console.log(globalState.favs);
   };
 
   const handleAddFav = () => {
     globalActions.addFav(movie);
-    console.log(globalState.favs);
   };
 
   return (

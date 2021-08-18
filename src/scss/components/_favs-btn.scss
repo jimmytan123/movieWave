@@ -1,3 +1,5 @@
+@use '../base/variables' as *;
+
 .favs-btn {
   button {
     background: none;
@@ -9,14 +11,14 @@
     outline: inherit;
   }
 
-  .unfilled-heart, .filled-heart {
-      fill: rgb(246,0,154);
+  .unfilled-heart,
+  .filled-heart {
+    fill: $site-blue;
   }
 
   svg {
-      display: block;
-      width: 2rem;
-      height: 2rem;
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
   }
-
 }

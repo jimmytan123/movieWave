@@ -2,13 +2,82 @@
 @use '../utilities/mixins' as *;
 
 .single-movie {
-    margin: $base-spacing $small-spacing;
-    background-color: $dark-grey;
-    padding: $base-spacing;
+  margin: $base-spacing $small-spacing;
+  background-color: $dark-grey;
+  padding: $base-spacing;
+  border-radius: 10px;
 
-    img {
-        display: block;
-        width: 100%;
-        border-radius: 5px;
+  p {
+    line-height: 1.8;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .singlePage-fav-btn {
+    button {
+      display: block;
+      padding: 0.3rem 0.7rem;
+      background-color: $light-grey;
+      border-radius: 10px;
+
+      svg {
+        transition: all 0.3s;
       }
+
+      &:hover {
+        svg {
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  .timing-info {
+    display: flex;
+    p:nth-of-type(1) {
+      margin-right: 1rem;
+    }
+
+    p {
+      opacity: 0.65;
+    }
+  }
+
+  .voteAndFav-info {
+    display: flex;
+    align-items: center;
+
+    .single-movie-scoreBox {
+      margin-right: 1rem;
+      padding: 0.2rem 0.6rem;
+      background-color: $light-grey;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: $site-blue;
+    }
+  }
+
+  h3 {
+    color: $site-blue;
+    margin-bottom: 0;
+  }
+
+  .genre-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      p {
+          margin-bottom: 0;
+          margin-right: 0.5rem;
+      }
+  }
 }
