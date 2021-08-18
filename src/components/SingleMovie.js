@@ -1,6 +1,6 @@
 import noPoster from '../images/no-poster-holder.png';
 import { posterEndPoint } from '../globals/globalVariables';
-import { unFilledHeartIcon } from '../globals/icon';
+import FavsBtn from './FavsBtn';
 
 
 const SingleMovie = ({ movie }) => {
@@ -27,8 +27,7 @@ const SingleMovie = ({ movie }) => {
           <p>{movie.release_date}</p>
           <p>{movieRuntime()}</p>
           <div className='single-movie-scoreBox'>{movie.vote_average}</div>
-          {/* for testing */}
-          <span style={{cursor: 'pointer'}}>{unFilledHeartIcon()}</span>
+          <FavsBtn movie={movie} className={'singlePage-fav-btn'}/>
           <h3>Overview</h3>
           <p>{movie.overview}</p>
         </div>

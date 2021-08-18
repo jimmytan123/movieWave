@@ -1,9 +1,9 @@
 import { posterEndPoint } from '../globals/globalVariables';
 import { Link } from 'react-router-dom';
 import noPoster from '../images/no-poster-holder.png';
-import { unFilledHeartIcon } from '../globals/icon';
+import FavsBtn from './FavsBtn';
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, checkFav }) => {
   return (
     <div className="single-movie-card">
       <div className="movie-card-content">
@@ -37,11 +37,14 @@ const MovieCard = ({ movie }) => {
           </div>
         </div>
         <h3>{movie.title}</h3>
-        {/* for testing */}
-        <span style={{ cursor: 'pointer' }}>{unFilledHeartIcon()}</span>
+        <FavsBtn movie={movie} className={'card-fav-btn'} checkFav={checkFav} />
       </div>
     </div>
   );
+};
+
+MovieCard.defaultProps = {
+  checkFav: true,
 };
 
 export default MovieCard;
