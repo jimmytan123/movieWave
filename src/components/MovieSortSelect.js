@@ -1,6 +1,6 @@
 const MovieSortSelect = ({ displayTitle, handleSortChange }) => {
   return (
-    <section className="movie-sort-nav">
+    <section className="movie-sort-select">
       <div className="movie-sort-title">
         <h2>
           <span>{displayTitle}</span> Movies

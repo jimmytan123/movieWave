@@ -12,8 +12,9 @@
 @use './components/header';
 @use './components/btn-main-nav';
 @use './components/main-nav';
-@use './components/sort-nav';
+@use './components/sort-select';
 @use './components/movies-grid';
 @use './components/movie-card';
+@use './components/change-page-btn';
 
 @use './components/footer';

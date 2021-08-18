@@ -1,5 +1,7 @@
+//functions for returning SVG icons
+
 //main site nav hamburger icon
-const hamburgerIcon = () => {
+export const hamburgerIcon = () => {
   return (
     <svg
       aria-label="menu hamburger icon"
@@ -14,7 +16,7 @@ const hamburgerIcon = () => {
 };
 
 //main site nav close icon
-const closeIcon = () => {
+export const closeIcon = () => {
   return (
     <svg
       aria-label="menu close icon"
@@ -28,4 +30,30 @@ const closeIcon = () => {
   );
 };
 
-export {hamburgerIcon, closeIcon};
+export const rightArrowIcon = () => {
+  return (
+    <svg
+      aria-label="right arrow icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+    </svg>
+  );
+};
+
+export const leftArrowIcon = () => {
+  return (
+    <svg
+      aria-label="left arrow icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+    </svg>
+  );
+};

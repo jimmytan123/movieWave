@@ -27,17 +27,11 @@
     color: $light;
     text-transform: uppercase;
     font-weight: 600;
-    transition: all 0.3s;
+    transition: all 0.2s;
 
     &.active {
       color: $site-orange;
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: $site-blue;
-    }
+    } 
   }
 
   .show & {

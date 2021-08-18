@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { appTitle, sortEndPoint, apiKey } from '../globals/globalVariables';
+import { appTitle, sortEndPoint, API_TOKEN } from '../globals/globalVariables';
 import MovieSortSelect from '../components/MovieSortSelect';
 import Movies from '../components/Movies';
+import ChangePageBtn from '../components/ChangePageBtn';
 
 const PageHome = () => {
   const [sort, setSort] = useState('popular');
@@ -15,13 +16,25 @@ const PageHome = () => {
 
   useEffect(() => {
     const fetchMovies = async () => {
-      const res = await fetch(
-        `${sortEndPoint}/${sort}?api_key=${apiKey}&page=${pages}`
-      );
-      let data = await res.json();
-      console.log(data.results);
-      setMovies(data.results);
+      try {
+        const res = await fetch(
+          `${sortEndPoint}/${sort}?&language=en-US&page=${pages}`,
+          {
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: 'Bearer ' + API_TOKEN,
+            },
+          }
+        );
+        let data = await res.json();
+        console.log(data.results);
+        setMovies(data.results);
+      } catch (err) {
+        alert(err);
+      }
     };
+
     fetchMovies();
   }, [sort, pages]);
 
@@ -64,20 +77,11 @@ const PageHome = () => {
         handleSortChange={handleSortChange}
       />
       <Movies movies={movies} />
-      {pages === 1 ? (
-        <button className="page-btn" disabled>Previous</button>
-      ) : (
-        <button className="page-btn" onClick={handlePreviousPage}>
-          Previous
-        </button>
-      )}
-      {pages < 3 ? (
-        <button className="page-btn" onClick={handleNextPage}>
-          Next
-        </button>
-      ) : (
-        <button className="page-btn" disabled>Next</button>
-      )}
+      <ChangePageBtn
+        pages={pages}
+        handleNextPage={handleNextPage}
+        handlePreviousPage={handlePreviousPage}
+      />
     </main>
   );
 };
