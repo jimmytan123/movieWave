@@ -81,6 +81,7 @@ const PageHome = () => {
         pages={pages}
         handleNextPage={handleNextPage}
         handlePreviousPage={handlePreviousPage}
+        maxPages={6}
       />
     </main>
   );
