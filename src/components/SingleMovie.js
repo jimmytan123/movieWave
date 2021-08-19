@@ -49,7 +49,7 @@ const SingleMovie = ({ movie }) => {
 
   return (
     <>
-      <div className="single-movie-main-content">
+      <div className="single-movie-main-grid">
         <div className="single-movie-poster">
           {!movie.poster_path ? (
             <img src={noPoster} alt="no poster" />
@@ -80,24 +80,27 @@ const SingleMovie = ({ movie }) => {
           ) : (
             <p className="single-overview-text">Overview coming soon...</p>
           )}
-        </div>
-      </div>
-      <div className="other-info">
-        <div className="genre-info">
-          <h3>Genre</h3>
-          <div className="genre-list">
-            {movie.genres.length > 0 ? (
-              movie.genres.map((genre, i) => <p key={i}>{genre.name}</p>)
-            ) : (
-              <p>Genre coming soon...</p>
-            )}
+
+          <div className="other-info">
+            <div className="genre-info">
+              <h3>Genre</h3>
+              <div className="genre-list">
+                {movie.genres.length > 0 ? (
+                  movie.genres.map((genre, i) => <p key={i}>{genre.name}</p>)
+                ) : (
+                  <p>Genre coming soon...</p>
+                )}
+              </div>
+            </div>
+            <div className="crew-info">
+              <h3>Director</h3>
+              {movieCrew && <p>{getDirector()}</p>}
+            </div>
           </div>
-        </div>
-        <div className="crew-info">
-          <h3>Director</h3>
-          {movieCrew && <p>{getDirector()}</p>}
+          
         </div>
       </div>
+
       {movie.tagline && <p className="tagline">{movie.tagline}</p>}
     </>
   );

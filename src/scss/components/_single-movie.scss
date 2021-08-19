@@ -6,6 +6,7 @@
   background-color: $dark-grey;
   padding: $base-spacing;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
   p {
     line-height: 1.8;
@@ -17,12 +18,13 @@
     border-radius: 10px;
     max-width: 500px;
     @include margin-center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
 
-  .single-movie-info {
-    max-width: 500px;
-    @include margin-center;
-  }
+//   .single-movie-overview-info {
+//     max-width: 500px;
+//     @include margin-center;
+//   }
 
   h2 {
     margin-bottom: 0;
@@ -101,11 +103,10 @@
     justify-content: center;
     align-items: center;
     padding: $base-spacing;
-    background-color: $black;
-    border-radius: 10px;
-
-    max-width: 768px;
-    margin: 0 auto;
+    // background-color: $black;
+    // border-radius: 10px;
+    // max-width: 768px;
+    // margin: 0 auto;
 
     h3 {
       margin: 0 0 $base-spacing 0;
@@ -117,7 +118,6 @@
   }
 
   @media (min-width: $breakpoint-mobile) {
-    padding: $double-spacing;
     margin-top: $double-spacing;
 
     h2 {
@@ -135,11 +135,12 @@
   }
 
   @media (min-width: $breakpoint-tablet) {
-    .single-movie-main-content {
+    .single-movie-main-grid {
       display: grid;
       grid-template-columns: 40% 1fr;
       gap: $medium-spacing;
       align-items: center;
+      margin-bottom: $base-spacing;
     }
 
     h2 {
@@ -151,22 +152,10 @@
       justify-content: flex-start;
     }
 
-    .crew-info {
-      justify-self: center;
-    }
-
-    .genre-info {
-      justify-self: center;
-    }
-
-    .single-movie-overview-info {
-      justify-self: center;
-    }
-
     .other-info {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: $small-spacing;
+        gap: $base-spacing;
     }
   }
 
