@@ -19,7 +19,7 @@ const SingleMovieMedia = ({ movie }) => {
         );
 
         let data = await res.json();
-        console.log(data.results);
+        //console.log(data.results);
         setVideos(data.results);
       } catch (err) {
         console.log(err.message);
@@ -30,7 +30,7 @@ const SingleMovieMedia = ({ movie }) => {
 
   const videoFromYoutube = () => {
     const result = videos.find((video) => video.site === 'YouTube');
-    console.log(result);
+    //console.log(result);
 
     if (result === undefined) {
       return;

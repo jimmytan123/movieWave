@@ -5,13 +5,13 @@ const ChangePageBtn = ({ pages, handlePreviousPage, handleNextPage, maxPages }) 
     if (pages === 1) {
       return (
         <button className="page-btn" disabled>
-          {leftArrowIcon()}
+          {leftArrowIcon}
         </button>
       );
     } else {
       return (
         <button className="page-btn" onClick={handlePreviousPage}>
-          {leftArrowIcon()}
+          {leftArrowIcon}
         </button>
       );
     }
@@ -21,13 +21,13 @@ const ChangePageBtn = ({ pages, handlePreviousPage, handleNextPage, maxPages }) 
     if (pages < maxPages) {
       return (
         <button className="page-btn" onClick={handleNextPage}>
-          {rightArrowIcon()}
+          {rightArrowIcon}
         </button>
       );
     } else {
       return (
         <button className="page-btn" disabled>
-          {rightArrowIcon()}
+          {rightArrowIcon}
         </button>
       );
     }

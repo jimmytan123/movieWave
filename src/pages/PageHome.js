@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
+import useGlobal from '../store/globalAppState';
 import { appTitle, sortEndPoint, API_TOKEN } from '../globals/globalVariables';
 import MovieSortSelect from '../components/MovieSortSelect';
 import Movies from '../components/Movies';
 import ChangePageBtn from '../components/ChangePageBtn';
-import useGlobal from '../store/globalAppState';
 
 const PageHome = () => {
   const [sort, setSort] = useState('popular');
   const [movies, setMovies] = useState(null);
-  const [displayTitle, setDisplayTitle] = useState('Popular');
   const [pages, setPages] = useState(1);
+  const [displayTitle, setDisplayTitle] = useState('Popular');
 
   const globalStateAndActions = useGlobal();
   const globalActions = globalStateAndActions[1];

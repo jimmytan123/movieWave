@@ -1,8 +1,7 @@
-import noPoster from '../images/no-poster-holder.png';
-import { posterEndPoint } from '../globals/globalVariables';
-import FavsBtn from './FavsBtn';
-import { API_TOKEN } from '../globals/globalVariables';
 import { useEffect, useState } from 'react';
+import noPoster from '../images/no-poster-holder.png';
+import { posterEndPoint, API_TOKEN } from '../globals/globalVariables';
+import FavsBtn from './FavsBtn';
 
 const SingleMovie = ({ movie }) => {
   const [movieCrew, setMovieCrew] = useState(null);
@@ -97,7 +96,7 @@ const SingleMovie = ({ movie }) => {
               {movieCrew && <p>{getDirector()}</p>}
             </div>
           </div>
-          
+
         </div>
       </div>
 

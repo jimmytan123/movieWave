@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { appTitle } from '../globals/globalVariables';
+import { Link } from 'react-router-dom';
 import useGlobal from '../store/globalAppState';
 import Movies from '../components/Movies';
-import { Link } from 'react-router-dom';
+import { appTitle } from '../globals/globalVariables';
 
 const PageFavourites = () => {
   useEffect(() => {

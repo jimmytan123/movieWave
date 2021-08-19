@@ -40,7 +40,7 @@ const Header = () => {
             e.preventDefault();
           }}
         >
-          {!navOpen ? hamburgerIcon() : closeIcon()}
+          {!navOpen ? hamburgerIcon : closeIcon}
         </button>
         <Nav handleClick={handleClick} />
       </div>
