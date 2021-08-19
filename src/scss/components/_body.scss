@@ -33,4 +33,9 @@ body {
     @include margin-center;
     flex: 1 1 auto;
   }
+
+  main.singleMovie-main-section {
+    max-width: 75rem;
+
+  }
 }

@@ -5,8 +5,9 @@ import { API_TOKEN } from '../globals/globalVariables';
 import { useEffect, useState } from 'react';
 
 const SingleMovie = ({ movie }) => {
-  const [movieCredit, setMovieCredit] = useState(null);
+  const [movieCrew, setMovieCrew] = useState(null);
 
+  //fetching movie crew infomation
   useEffect(() => {
     const fetchSingleMovieCredits = async () => {
       try {
@@ -22,9 +23,9 @@ const SingleMovie = ({ movie }) => {
         );
 
         let data = await res.json();
-        console.log(data.crew);
+        //console.log(data);
 
-        setMovieCredit(data.crew);
+        setMovieCrew(data.crew);
       } catch (err) {
         console.log(err.message);
       }
@@ -32,22 +33,22 @@ const SingleMovie = ({ movie }) => {
     fetchSingleMovieCredits();
   }, [movie.id]);
 
-  const movieRuntime = () => {
-    const hours = Math.floor(movie.runtime / 60);
-    const minutes = movie.runtime % 60;
-    return hours + 'h ' + minutes + 'm';
-  };
-
   const getDirector = () => {
-    const result = movieCredit.find((person) => person.job === 'Director');
+    const result = movieCrew.find((person) => person.job === 'Director');
     if (result === undefined) {
       return 'Director coming soon...';
     }
     return result.name;
   };
 
+  const movieRuntime = () => {
+    const hours = Math.floor(movie.runtime / 60);
+    const minutes = movie.runtime % 60;
+    return hours + 'h ' + minutes + 'm';
+  };
+
   return (
-    <div className="single-movie">
+    <>
       <div className="single-movie-content">
         <div className="single-movie-poster">
           {!movie.poster_path ? (
@@ -59,15 +60,19 @@ const SingleMovie = ({ movie }) => {
             />
           )}
         </div>
-        <div className="single-movie-info">
+        <div className="single-movie-overview-info">
           <h2>{movie.title}</h2>
-          <div className="timing-info">
-            <p>{movie.release_date}</p>
-            <p>{movieRuntime()}</p>
-          </div>
-          <div className="voteAndFav-info">
-            <div className="single-movie-scoreBox">{movie.vote_average}</div>
-            <FavsBtn movie={movie} className={'singlePage-fav-btn'} />
+          <div className="sub-icon-group">
+            <div className="timing-info">
+              <p>{movie.release_date}</p>
+              <p>{movieRuntime()}</p>
+            </div>
+            <div className="voteAndFav-info">
+              <div className="single-movie-scoreBox">
+                {movie.vote_average.toFixed(1)}
+              </div>
+              <FavsBtn movie={movie} className={'singlePage-fav-btn'} />
+            </div>
           </div>
           <h3>Overview</h3>
           {movie.overview ? (
@@ -75,6 +80,8 @@ const SingleMovie = ({ movie }) => {
           ) : (
             <p className="single-overview-text">Overview coming soon...</p>
           )}
+        </div>
+        <div className="genre-info">
           <h3>Genre</h3>
           <div className="genre-list">
             {movie.genres.length > 0 ? (
@@ -83,11 +90,14 @@ const SingleMovie = ({ movie }) => {
               <p>Genre coming soon...</p>
             )}
           </div>
+        </div>
+        <div className="crew-info">
           <h3>Director</h3>
-          {movieCredit && <p>{getDirector()}</p>}
+          {movieCrew && <p>{getDirector()}</p>}
         </div>
       </div>
-    </div>
+      {movie.tagline && <p className="tagline">{movie.tagline}</p>}
+    </>
   );
 };
 

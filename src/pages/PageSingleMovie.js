@@ -2,6 +2,7 @@ import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { API_TOKEN } from '../globals/globalVariables';
 import SingleMovie from '../components/SingleMovie';
+import SingleMovieMedia from '../components/SingleMovieMedia';
 
 const PageSingleMovie = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ const PageSingleMovie = () => {
         );
 
         let data = await res.json();
-        console.log(data);
+        //console.log(data);
         setMovieData(data);
       } catch (err) {
         console.log(err.message);
@@ -33,7 +34,10 @@ const PageSingleMovie = () => {
 
   return (
     <main className="singleMovie-main-section">
-      {movieData && <SingleMovie movie={movieData} />}
+      <div className="single-movie">
+        {movieData && <SingleMovie movie={movieData} />}
+        {movieData && <SingleMovieMedia movie={movieData} />}
+      </div>
     </main>
   );
 };

@@ -2,7 +2,7 @@
 @use '../utilities/mixins' as *;
 
 .single-movie {
-  margin: $base-spacing $small-spacing;
+  margin: $base-spacing 0.3rem;
   background-color: $dark-grey;
   padding: $base-spacing;
   border-radius: 10px;
@@ -14,7 +14,14 @@
   img {
     display: block;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
+    max-width: 500px;
+    @include margin-center;
+  }
+
+  .single-movie-info {
+    max-width: 500px;
+    @include margin-center;
   }
 
   h2 {
@@ -72,12 +79,92 @@
   }
 
   .genre-list {
-      display: flex;
-      flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 
-      p {
-          margin-bottom: 0;
-          margin-right: 0.5rem;
-      }
+    p {
+      margin-bottom: 0;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .tagline {
+    opacity: 0.7;
+    font-style: italic;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .movie-video-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $base-spacing;
+    background-color: $black;
+    border-radius: 10px;
+
+    h3 {
+      margin: 0 0 $base-spacing 0;
+    }
+
+    iframe {
+      display: block;
+    }
+  }
+
+  @media (min-width: $breakpoint-mobile) {
+    padding: $double-spacing;
+    margin-top: $double-spacing;
+
+    h2 {
+      text-align: center;
+    }
+
+    .sub-icon-group {
+      display: flex;
+      justify-content: center;
+    }
+
+    .timing-info {
+      margin-right: 1rem;
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    .single-movie-content {
+      display: grid;
+      grid-template-columns: 40% 1fr;
+      gap: $medium-spacing;
+      align-items: center;
+    }
+
+    h2 {
+      margin-top: 0;
+      text-align: left;
+    }
+
+    .sub-icon-group {
+      justify-content: flex-start;
+    }
+
+    .crew-info {
+      align-self: start;
+      justify-self: center;
+    }
+
+    .genre-info {
+      justify-self: center;
+    }
+
+    .single-movie-overview-info {
+      justify-self: center;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    img {
+      max-width: 350px;
+    }
   }
 }
