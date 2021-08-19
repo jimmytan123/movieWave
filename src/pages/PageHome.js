@@ -3,6 +3,7 @@ import { appTitle, sortEndPoint, API_TOKEN } from '../globals/globalVariables';
 import MovieSortSelect from '../components/MovieSortSelect';
 import Movies from '../components/Movies';
 import ChangePageBtn from '../components/ChangePageBtn';
+import useGlobal from '../store/globalAppState';
 
 const PageHome = () => {
   const [sort, setSort] = useState('popular');
@@ -10,11 +11,16 @@ const PageHome = () => {
   const [displayTitle, setDisplayTitle] = useState('Popular');
   const [pages, setPages] = useState(1);
 
+  const globalStateAndActions = useGlobal();
+  const globalActions = globalStateAndActions[1];
+
   useEffect(() => {
     document.title = `${appTitle} - Home`;
   }, []);
 
   useEffect(() => {
+    globalActions.setFavs();
+
     const fetchMovies = async () => {
       try {
         const res = await fetch(
@@ -36,7 +42,7 @@ const PageHome = () => {
     };
 
     fetchMovies();
-  }, [sort, pages]);
+  }, [sort, pages, globalActions]);
 
   const handleSortChange = (e) => {
     const currentSelectedSort = e.target.value;

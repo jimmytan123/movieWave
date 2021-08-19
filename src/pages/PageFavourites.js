@@ -9,9 +9,11 @@ const PageFavourites = () => {
     document.title = `${appTitle} - Favourites`;
   }, []);
 
-  // const [globalState, globalActions] = useGlobal();
-  const globalStateAndglobalActions = useGlobal();
-  const globalState = globalStateAndglobalActions[0];
+  const [globalState, globalActions] = useGlobal();
+
+  useEffect(() => {
+    globalActions.setFavs();
+  }, [globalActions]);
 
   return (
     <main className="favourites-main-section">
