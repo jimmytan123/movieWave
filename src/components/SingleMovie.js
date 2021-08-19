@@ -49,7 +49,7 @@ const SingleMovie = ({ movie }) => {
 
   return (
     <>
-      <div className="single-movie-content">
+      <div className="single-movie-main-content">
         <div className="single-movie-poster">
           {!movie.poster_path ? (
             <img src={noPoster} alt="no poster" />
@@ -81,6 +81,8 @@ const SingleMovie = ({ movie }) => {
             <p className="single-overview-text">Overview coming soon...</p>
           )}
         </div>
+      </div>
+      <div className="other-info">
         <div className="genre-info">
           <h3>Genre</h3>
           <div className="genre-list">

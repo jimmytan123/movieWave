@@ -104,6 +104,9 @@
     background-color: $black;
     border-radius: 10px;
 
+    max-width: 768px;
+    margin: 0 auto;
+
     h3 {
       margin: 0 0 $base-spacing 0;
     }
@@ -132,7 +135,7 @@
   }
 
   @media (min-width: $breakpoint-tablet) {
-    .single-movie-content {
+    .single-movie-main-content {
       display: grid;
       grid-template-columns: 40% 1fr;
       gap: $medium-spacing;
@@ -149,7 +152,6 @@
     }
 
     .crew-info {
-      align-self: start;
       justify-self: center;
     }
 
@@ -159,6 +161,12 @@
 
     .single-movie-overview-info {
       justify-self: center;
+    }
+
+    .other-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $small-spacing;
     }
   }
 
