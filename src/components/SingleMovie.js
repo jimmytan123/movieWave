@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 import noPoster from '../images/no-poster-holder.png';
-import { posterEndPoint, API_TOKEN, appTitle } from '../globals/globalVariables';
+import {
+  posterEndPoint,
+  API_TOKEN,
+  appTitle,
+} from '../globals/globalVariables';
 import FavsBtn from './FavsBtn';
 
 const SingleMovie = ({ movie }) => {
@@ -101,10 +105,8 @@ const SingleMovie = ({ movie }) => {
               {movieCrew && <p>{getDirector()}</p>}
             </div>
           </div>
-
         </div>
       </div>
-
       {movie.tagline && <p className="tagline">{movie.tagline}</p>}
     </>
   );

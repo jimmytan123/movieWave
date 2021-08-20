@@ -82,14 +82,14 @@ const PageHome = () => {
   const handleChoosePage = (pageNum) => {
     setPages(pageNum);
     scrollToTop();
-  }
+  };
 
   const scrollToTop = () => {
     window.scrollTo({
-        top: 0,
-        behavior: "smooth",
+      top: 0,
+      behavior: 'smooth',
     });
-};
+  };
 
   return (
     <main className="home-main-section">
@@ -97,7 +97,13 @@ const PageHome = () => {
         displayTitle={displayTitle}
         handleSortChange={handleSortChange}
       />
-      {movies && <Movies movies={movies} />}
+
+      {movies ? (
+        <Movies movies={movies} />
+      ) : (
+        <div class="loader">Loading...</div>
+      )}
+
       <ChangePageBtn
         pages={pages}
         handleNextPage={handleNextPage}
