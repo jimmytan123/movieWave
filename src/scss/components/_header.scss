@@ -20,13 +20,14 @@ header {
       font-size: $medium-font-size;
       font-family: $logo-font;
 
-      .logo-m {
-        color: $site-orange;
-      }
+    }
 
-      .logo-w {
-        color: $site-blue;
-      }
+    .logo-m {
+      color: $site-orange;
+    }
+
+    .logo-w {
+      color: $site-blue;
     }
 
     button {

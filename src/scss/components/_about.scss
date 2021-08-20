@@ -1,0 +1,24 @@
+@use '../base/variables' as *;
+
+.about-main-section {
+  text-align: center;
+  padding: $small-spacing;
+  max-width: 56.25rem;
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .logo {
+      font-family: $logo-font;
+  }
+
+  .logo-m {
+    color: $site-orange;
+  }
+
+  .logo-w {
+    color: $site-blue;
+  }
+}
