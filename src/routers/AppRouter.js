@@ -10,6 +10,7 @@ import PageHome from '../pages/PageHome';
 import PageAbout from '../pages/PageAbout';
 import PageFavourites from '../pages/PageFavourites';
 import PageSingleMovie from '../pages/PageSingleMovie';
+import PageSearch from '..//pages/PageSearch';
 
 
 
@@ -23,6 +24,7 @@ const AppRouter = () => {
             <Route path='/about'><PageAbout /></Route>
             <Route path='/favourites'><PageFavourites /></Route>
             <Route path='/movie/:id'><PageSingleMovie /></Route>
+            <Route path='/search'><PageSearch /></Route>
           </Switch>
         <Footer />
       </div>

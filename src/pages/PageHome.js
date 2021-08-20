@@ -101,7 +101,7 @@ const PageHome = () => {
       {movies ? (
         <Movies movies={movies} />
       ) : (
-        <div class="loader">Loading...</div>
+        <div className="loader">Loading...</div>
       )}
 
       <ChangePageBtn

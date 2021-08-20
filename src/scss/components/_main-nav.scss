@@ -15,8 +15,8 @@
   top: 68px;
   left: 0;
   right: 0;
-  background-color: rgba(0,0,0,0.9);
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9;
 
   ul {
     @include ul-base;
@@ -32,13 +32,22 @@
 
     &.active {
       color: $site-orange;
-    } 
+    }
+  }
+
+  .search-icon-link {
+    margin: $small-spacing;
   }
 
   .show & {
-    height: 168px;
+    height: 215px;
     visibility: visible;
     transition: all 0.4s;
+  }
+
+  svg {
+    fill: $light;
+    display: block;
   }
 
   @media (min-width: $breakpoint-mobile) {
@@ -49,7 +58,7 @@
 
     position: relative;
     top: 0;
-  
+
     .show & {
       transition: none;
       height: auto;
@@ -57,6 +66,7 @@
 
     ul {
       display: flex;
+      align-items: center;
     }
 
     a {
@@ -65,7 +75,7 @@
   }
 
   @media (min-width: $breakpoint-tablet) {
-    a {
+    a, .search-icon-link {
       margin: 0 $medium-spacing;
     }
   }

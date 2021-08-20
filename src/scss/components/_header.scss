@@ -49,8 +49,17 @@ header {
   @media (min-width: $breakpoint-mobile) {
     .top-bar {
       a.site-logo {
-        font-size: $large-font-size;
+        font-size: 1.8rem;
       }
     }
   }
+
+  @media (min-width: 600px) {
+    .top-bar {
+      a.site-logo {
+        font-size: 2rem;
+      }
+    }
+  }
+  
 }

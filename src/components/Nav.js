@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { searchIcon } from '../globals/icon';
 
 const Nav = ({ handleClick }) => {
 
@@ -13,6 +14,7 @@ const Nav = ({ handleClick }) => {
                 <li><NavLink to='/' exact>Home</NavLink></li>
                 <li><NavLink to='/about'>About</NavLink></li>
                 <li><NavLink to='/favourites'>Favourites</NavLink></li>
+                <li><NavLink to='/search' className='search-icon-link'>{searchIcon}</NavLink></li>
             </ul>
         </nav>
     )
