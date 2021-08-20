@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Nav from './Nav';
 import { hamburgerIcon, closeIcon } from '../globals/icon';
 
@@ -27,11 +27,11 @@ const Header = () => {
     <header className={navOpen ? 'show' : 'undefined'}>
       <div className="top-bar">
         <h1>
-          <Link to="/" className="site-logo">
+          <NavLink to="/" className="site-logo">
             <span className="logo-m">M</span>ovie
             <span className="logo-w">W</span>
             ave
-          </Link>
+          </NavLink>
         </h1>
         <button
           onClick={handleClick}

@@ -37,7 +37,7 @@ const MovieCard = ({ movie, checkFav }) => {
             <Link to={`/movie/${movie.id}`}>More Info</Link>
           </div>
         </div>
-        <h3>{movie.title}</h3>
+        <Link to={`/movie/${movie.id}`}><h3>{movie.title}</h3></Link>
       </div>
     </div>
   );

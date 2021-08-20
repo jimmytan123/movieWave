@@ -1,6 +1,12 @@
 import { rightArrowIcon, leftArrowIcon } from '../globals/icon';
 
-const ChangePageBtn = ({ pages, handlePreviousPage, handleNextPage, maxPages }) => {
+const ChangePageBtn = ({
+  pages,
+  handlePreviousPage,
+  handleNextPage,
+  handleChoosePage,
+  maxPages,
+}) => {
   const previousBtn = () => {
     if (pages === 1) {
       return (
@@ -33,11 +39,16 @@ const ChangePageBtn = ({ pages, handlePreviousPage, handleNextPage, maxPages }) 
     }
   };
 
-  const indicator = () => {
+  const pageDots = () => {
     let dots = [];
     for (let i = 1; i <= maxPages; i++) {
       dots.push(
-        <div className={pages === i ? 'dot active' : 'dot'} key={i}></div>
+        <div
+          className={pages === i ? 'dot active' : 'dot'}
+          key={i}
+          id={i}
+          onClick={() => handleChoosePage(i)}
+        ></div>
       );
     }
     return dots;
@@ -46,7 +57,7 @@ const ChangePageBtn = ({ pages, handlePreviousPage, handleNextPage, maxPages }) 
   return (
     <div className="changePageBtn-section">
       {previousBtn()}
-      <div className="page-indicator">{indicator()}</div>
+      <div className="page-indicator">{pageDots()}</div>
       {nextBtn()}
     </div>
   );

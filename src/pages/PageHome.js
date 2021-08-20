@@ -70,11 +70,25 @@ const PageHome = () => {
 
   const handleNextPage = () => {
     setPages(pages + 1);
+    scrollToTop();
   };
 
   const handlePreviousPage = () => {
     setPages(pages - 1);
+    scrollToTop();
   };
+
+  const handleChoosePage = (pageNum) => {
+    setPages(pageNum);
+    scrollToTop();
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+};
 
   return (
     <main className="home-main-section">
@@ -87,6 +101,7 @@ const PageHome = () => {
         pages={pages}
         handleNextPage={handleNextPage}
         handlePreviousPage={handlePreviousPage}
+        handleChoosePage={handleChoosePage}
         maxPages={5}
       />
     </main>
