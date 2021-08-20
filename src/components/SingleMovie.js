@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react';
 import noPoster from '../images/no-poster-holder.png';
-import { posterEndPoint, API_TOKEN } from '../globals/globalVariables';
+import { posterEndPoint, API_TOKEN, appTitle } from '../globals/globalVariables';
 import FavsBtn from './FavsBtn';
 
 const SingleMovie = ({ movie }) => {
   const [movieCrew, setMovieCrew] = useState(null);
+
+  //change tab title when rendering
+  useEffect(() => {
+    document.title = `${movie.title} - ${appTitle}`;
+  }, [movie.title]);
 
   //fetching movie crew infomation
   useEffect(() => {

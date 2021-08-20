@@ -5,8 +5,9 @@ import Movies from '../components/Movies';
 import { appTitle } from '../globals/globalVariables';
 
 const PageFavourites = () => {
+  //change tab title when rendering
   useEffect(() => {
-    document.title = `${appTitle} - Favourites`;
+    document.title = `Favourites - ${appTitle}`;
   }, []);
 
   const [globalState, globalActions] = useGlobal();

@@ -3,9 +3,9 @@ import { appTitle } from '../globals/globalVariables';
 
 
 const PageAbout = () => {
-
+  //change tab title when rendering
   useEffect(() => {
-    document.title = `${appTitle} - About`;
+    document.title = `About - ${appTitle}`;
 }, []);
 
   return (

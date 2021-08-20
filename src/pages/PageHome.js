@@ -14,8 +14,9 @@ const PageHome = () => {
   const globalStateAndActions = useGlobal();
   const globalActions = globalStateAndActions[1];
 
+  //change tab title when rendering
   useEffect(() => {
-    document.title = `${appTitle} - Home`;
+    document.title = `${appTitle}`;
   }, []);
 
   useEffect(() => {
