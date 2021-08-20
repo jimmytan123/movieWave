@@ -39,11 +39,15 @@
       border-radius: 50%;
       display: inline-block;
       margin: 0.5rem;
-      transition: all 0.3s;
+      transition: background-color 0.3s;
       cursor: pointer;
 
       &.active {
         background-color: $site-orange;
+      }
+
+      &:hover {
+        border: 2px solid $site-orange;
       }
     }
 
