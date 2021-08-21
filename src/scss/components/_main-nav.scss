@@ -36,6 +36,7 @@
   }
 
   .search-icon-link {
+    display: block;
     margin: $small-spacing;
   }
 
@@ -48,6 +49,10 @@
   svg {
     fill: $light;
     display: block;
+    transition: all 0.4s;
+    &:hover {
+      fill: $site-blue;
+    }
   }
 
   @media (min-width: $breakpoint-mobile) {
@@ -75,7 +80,8 @@
   }
 
   @media (min-width: $breakpoint-tablet) {
-    a, .search-icon-link {
+    a,
+    .search-icon-link {
       margin: 0 $medium-spacing;
     }
   }

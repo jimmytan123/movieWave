@@ -24,7 +24,6 @@ const PageSearch = () => {
           console.log(data.results);
   
           setMovies(data.results);
-          setSearchTerm('')
         } catch (err) {
           console.log(err.message);
         }
