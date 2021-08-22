@@ -4,6 +4,7 @@ import { API_TOKEN } from '../globals/globalVariables';
 const SingleMovieMedia = ({ movie }) => {
   const [videos, setVideos] = useState(null);
 
+  //fetching movie trailers info
   useEffect(() => {
     const fetchVideoInfo = async () => {
       try {
@@ -28,21 +29,21 @@ const SingleMovieMedia = ({ movie }) => {
     fetchVideoInfo();
   }, [movie.id]);
 
+  //function to find Youtube video result from the fetching movie trailers info
   const videoFromYoutube = () => {
-    const result = videos.find((video) => video.site === 'YouTube');
-    //console.log(result);
+    const ytVideoResult = videos.find((video) => video.site === 'YouTube');
 
-    if (result === undefined) {
+    if (ytVideoResult === undefined) {
       return;
     }
 
     return (
       <div className="movie-video-section">
-        <h3>{result.name}</h3>
+        <h3>{ytVideoResult.name}</h3>
         <iframe
           width="560"
           height="315"
-          src={`https://www.youtube.com/embed/${result.key}?rel=0`}
+          src={`https://www.youtube.com/embed/${ytVideoResult.key}?rel=0`}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

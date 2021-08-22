@@ -20,6 +20,7 @@ const PageHome = () => {
   }, []);
 
   useEffect(() => {
+    //ensure local state favs in sync with favs in local storage
     globalActions.setFavs();
 
     const fetchMovies = async () => {
@@ -47,10 +48,13 @@ const PageHome = () => {
 
   const handleSortChange = (e) => {
     const currentSelectedSort = e.target.value;
+    //update the current sort selection state
     setSort(currentSelectedSort);
 
+    //when sort select changes, set back page to 1 to fetch the first page of the movie data
     setPages(1);
 
+    //update the display text based on sort selection
     switch (currentSelectedSort) {
       case 'popular':
         setDisplayTitle('Popular');
@@ -84,6 +88,7 @@ const PageHome = () => {
     scrollToTop();
   };
 
+  //function to call when changing pages, scroll to top of the web page
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,

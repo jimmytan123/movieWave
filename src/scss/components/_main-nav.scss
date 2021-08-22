@@ -49,6 +49,7 @@
   svg {
     fill: $light;
     display: block;
+    margin: 0 auto;
     transition: all 0.4s;
     &:hover {
       fill: $site-blue;

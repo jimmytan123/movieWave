@@ -10,6 +10,7 @@
 
   p {
     line-height: 1.8;
+    margin-right: $small-spacing;
   }
 
   img {
@@ -18,13 +19,13 @@
     border-radius: 10px;
     max-width: 500px;
     @include margin-center;
-    //rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     &:hover {
-      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
     }
   }
 
@@ -92,7 +93,7 @@
     }
   }
 
-  .tagline {
+  .tagline p {
     opacity: 0.7;
     font-style: italic;
     text-align: center;
@@ -156,9 +157,9 @@
     }
 
     .other-info {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: $base-spacing;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $base-spacing;
     }
   }
 

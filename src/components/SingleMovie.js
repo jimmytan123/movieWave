@@ -15,7 +15,7 @@ const SingleMovie = ({ movie }) => {
     document.title = `${movie.title} - ${appTitle}`;
   }, [movie.title]);
 
-  //fetching movie crew infomation
+  //fetching movie crew info
   useEffect(() => {
     const fetchSingleMovieCredits = async () => {
       try {
@@ -41,6 +41,7 @@ const SingleMovie = ({ movie }) => {
     fetchSingleMovieCredits();
   }, [movie.id]);
 
+  //function to return director's name from the movie crew data
   const getDirector = () => {
     const result = movieCrew.find((person) => person.job === 'Director');
     if (result === undefined) {
@@ -49,9 +50,10 @@ const SingleMovie = ({ movie }) => {
     return result.name;
   };
 
-  const movieRuntime = () => {
-    const hours = Math.floor(movie.runtime / 60);
-    const minutes = movie.runtime % 60;
+  //function to convert pure minutes into hours and minutes
+  const runtimeInHoursAndMins = (pureMintues) => {
+    const hours = Math.floor(pureMintues / 60);
+    const minutes = pureMintues % 60;
     return hours + 'h ' + minutes + 'm';
   };
 
@@ -73,7 +75,7 @@ const SingleMovie = ({ movie }) => {
           <div className="sub-icon-group">
             <div className="timing-info">
               <p>{movie.release_date}</p>
-              <p>{movieRuntime()}</p>
+              <p>{runtimeInHoursAndMins(movie.runtime)}</p>
             </div>
             <div className="voteAndFav-info">
               <div className="single-movie-scoreBox">
@@ -107,7 +109,7 @@ const SingleMovie = ({ movie }) => {
           </div>
         </div>
       </div>
-      {movie.tagline && <p className="tagline">{movie.tagline}</p>}
+      {movie.tagline && <div className="tagline"><p>{movie.tagline}</p></div>}
     </>
   );
 };
