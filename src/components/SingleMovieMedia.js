@@ -1,37 +1,12 @@
-import { useEffect, useState } from 'react';
-import { API_TOKEN } from '../globals/globalVariables';
 
-const SingleMovieMedia = ({ movie }) => {
-  const [videos, setVideos] = useState(null);
-
-  //fetching movie trailers info
-  useEffect(() => {
-    const fetchVideoInfo = async () => {
-      try {
-        const res = await fetch(
-          `https://api.themoviedb.org/3/movie/${movie.id}/videos`,
-          {
-            headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-              Authorization: 'Bearer ' + API_TOKEN,
-            },
-          }
-        );
-
-        let data = await res.json();
-        //console.log(data.results);
-        setVideos(data.results);
-      } catch (err) {
-        console.log(err.message);
-      }
-    };
-    fetchVideoInfo();
-  }, [movie.id]);
-
-  //function to find Youtube video result from the fetching movie trailers info
+const SingleMovieMedia = ({ movieVideos }) => {
+  //function to find the first Youtube video result from the fetching movie trailers info
   const videoFromYoutube = () => {
-    const ytVideoResult = videos.find((video) => video.site === 'YouTube');
+    const ytVideoResult = movieVideos.results.find(
+      (video) => video.site === 'YouTube'
+    );
+
+    //console.log(ytVideoResult);
 
     if (ytVideoResult === undefined) {
       return;
@@ -55,7 +30,7 @@ const SingleMovieMedia = ({ movie }) => {
 
   return (
     <section className="movie-media-section">
-      {videos && videoFromYoutube()}
+      {movieVideos.results && videoFromYoutube()}
     </section>
   );
 };

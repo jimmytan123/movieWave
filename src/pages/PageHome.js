@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import useGlobal from '../store/globalAppState';
-import { appTitle, sortEndPoint, API_TOKEN } from '../globals/globalVariables';
+import { appTitle, API_TOKEN } from '../globals/globalVariables';
 import MovieSortSelect from '../components/MovieSortSelect';
 import Movies from '../components/Movies';
 import ChangePageBtn from '../components/ChangePageBtn';
+import { getDate } from '../utilities/date';
 
 const PageHome = () => {
   const [sort, setSort] = useState('popular');
@@ -23,20 +24,30 @@ const PageHome = () => {
     //ensure local state favs in sync with favs in local storage
     globalActions.setFavs();
 
+    /* 
+    When fetching upcoming movies, the TMDb API may return some movies that are already released,
+    so add a condition to the endpoint based on the sort state, only returns the movies that will be released in the future when
+    selecting the upcoming filter.
+    */
+    const getEndPoint = () => {
+      if (sort === 'upcoming') {
+        return `https://api.themoviedb.org/3/movie/upcoming?&language=en-US&page=${pages}&primary_release_date.gte=${getDate()}`;
+      } else {
+        return `https://api.themoviedb.org/3/movie/${sort}?&language=en-US&page=${pages}`;
+      }
+    };
+
     const fetchMovies = async () => {
       try {
-        const res = await fetch(
-          `${sortEndPoint}/${sort}?&language=en-US&page=${pages}`,
-          {
-            headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-              Authorization: 'Bearer ' + API_TOKEN,
-            },
-          }
-        );
+        const res = await fetch(`${getEndPoint()}`, {
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + API_TOKEN,
+          },
+        });
         let data = await res.json();
-        console.log(data.results);
+        //console.log(data.results);
         setMovies(data.results);
       } catch (err) {
         console.log(err.message);
@@ -51,7 +62,7 @@ const PageHome = () => {
     //update the current sort selection state
     setSort(currentSelectedSort);
 
-    //when sort select changes, set back page to 1 to fetch the first page of the movie data
+    //when sort select changes, set back page to 1 to fetch the first page of the movies
     setPages(1);
 
     //update the display text based on sort selection
