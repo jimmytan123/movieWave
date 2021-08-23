@@ -35,7 +35,7 @@ const PageSingleMovie = () => {
         {movieData ? (
           <>
             <SingleMovie movie={movieData} />
-            <SingleMovieMedia movieVideos={movieData.videos} movieGallery={movieData.images.backdrops}/>
+            <SingleMovieMedia movieVideos={movieData.videos.results} movieGallery={movieData.images.backdrops}/>
           </>
         ) : (
           <div className="loader">Loading...</div>
