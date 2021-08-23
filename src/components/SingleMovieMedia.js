@@ -5,11 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 const SingleMovieMedia = ({ movieVideos, movieGallery }) => {
   //function to find the first Youtube video result from the fetching movie trailers info
   const videoFromYoutube = () => {
-    const ytVideoResult = movieVideos.find(
-      (video) => video.site === 'YouTube'
-    );
-
-    //console.log(ytVideoResult);
+    const ytVideoResult = movieVideos.find((video) => video.site === 'YouTube');
 
     if (ytVideoResult === undefined) {
       return;
@@ -60,8 +56,8 @@ const SingleMovieMedia = ({ movieVideos, movieGallery }) => {
 
   return (
     <section className="movie-media-section">
-      {movieGallery && imagesCarousel()}
-      {movieVideos && videoFromYoutube()}
+      {movieGallery.length > 0 && imagesCarousel()}
+      {movieVideos.length > 0 && videoFromYoutube()}
     </section>
   );
 };

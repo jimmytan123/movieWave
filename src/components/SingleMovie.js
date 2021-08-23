@@ -1,49 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import noPoster from '../images/no-poster-holder.png';
-import {
-  posterEndPoint,
-  API_TOKEN,
-  appTitle,
-} from '../globals/globalVariables';
+import { posterEndPoint, appTitle } from '../globals/globalVariables';
 import FavsBtn from './FavsBtn';
 
 const SingleMovie = ({ movie }) => {
-  const [movieCrew, setMovieCrew] = useState(null);
-
   //change tab title when rendering
   useEffect(() => {
     document.title = `${movie.title} - ${appTitle}`;
   }, [movie.title]);
 
-  //fetching movie crew info
-  useEffect(() => {
-    const fetchSingleMovieCredits = async () => {
-      try {
-        const res = await fetch(
-          `https://api.themoviedb.org/3/movie/${movie.id}/credits`,
-          {
-            headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-              Authorization: 'Bearer ' + API_TOKEN,
-            },
-          }
-        );
-
-        let data = await res.json();
-        //console.log(data);
-
-        setMovieCrew(data.crew);
-      } catch (err) {
-        console.log(err.message);
-      }
-    };
-    fetchSingleMovieCredits();
-  }, [movie.id]);
-
   //function to return director's name from the movie crew data
   const getDirector = () => {
-    const result = movieCrew.find((person) => person.job === 'Director');
+    const result = movie.credits.crew.find(
+      (person) => person.job === 'Director'
+    );
     if (result === undefined) {
       return 'Director coming soon...';
     }
@@ -104,12 +74,16 @@ const SingleMovie = ({ movie }) => {
             </div>
             <div className="crew-info">
               <h3>Director</h3>
-              {movieCrew && <p>{getDirector()}</p>}
+              {movie.credits.crew && <p>{getDirector()}</p>}
             </div>
           </div>
         </div>
       </div>
-      {movie.tagline && <div className="tagline"><p>{movie.tagline}</p></div>}
+      {movie.tagline && (
+        <div className="tagline">
+          <p>{movie.tagline}</p>
+        </div>
+      )}
     </>
   );
 };
