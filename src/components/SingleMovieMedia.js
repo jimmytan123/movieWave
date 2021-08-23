@@ -1,5 +1,6 @@
+import { posterEndPoint } from '../globals/globalVariables';
 
-const SingleMovieMedia = ({ movieVideos }) => {
+const SingleMovieMedia = ({ movieVideos, movieGallery }) => {
   //function to find the first Youtube video result from the fetching movie trailers info
   const videoFromYoutube = () => {
     const ytVideoResult = movieVideos.results.find(
@@ -31,6 +32,11 @@ const SingleMovieMedia = ({ movieVideos }) => {
   return (
     <section className="movie-media-section">
       {movieVideos.results && videoFromYoutube()}
+      {movieGallery && movieGallery.map((image, i) => {
+        return (
+          <img src={`${posterEndPoint}${image.file_path}`} alt='gallery of movie' key={i}></img>
+        )
+      })}
     </section>
   );
 };
