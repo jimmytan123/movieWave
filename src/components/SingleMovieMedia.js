@@ -1,6 +1,6 @@
 import { posterEndPoint } from '../globals/globalVariables';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // webpack
+import { Carousel } from 'react-responsive-carousel'; //webpack
 
 const SingleMovieMedia = ({ movieVideos, movieGallery }) => {
   //function to find the first Youtube video result from the fetching movie trailers info
