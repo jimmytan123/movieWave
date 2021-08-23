@@ -46,9 +46,13 @@ const PageSearch = () => {
 
   const displayEmptyResultMsg = () => {
     if (searchInputError) {
-      return <p>{searchInputError}</p>;
+      return <p className="error-msg">{searchInputError}</p>;
     } else if (movies && movies.length === 0) {
-      return <p>Sorry, there are no movies that matched your search term.</p>;
+      return (
+        <p className="error-msg">
+          Sorry, there are no movies that matched your search term.
+        </p>
+      );
     }
   };
 
@@ -58,7 +62,7 @@ const PageSearch = () => {
       {displayEmptyResultMsg()}
       {movies && movies.length !== 0 && (
         <>
-          <h2>Show search result for: {displayTerm}</h2>
+          <h2 className='search-heading'>Show search result for: {displayTerm}</h2>
           <Movies movies={movies} />
         </>
       )}

@@ -16,8 +16,20 @@ const MovieCard = ({ movie, checkFav }) => {
               alt={`poster of ${movie.title}`}
             />
           )}
-          <p className="rating-score">{movie.vote_average.toFixed(1)}</p>
-          <FavsBtn movie={movie} className={'card-fav-btn'} checkFav={checkFav} />
+          <p
+            className={
+              movie.vote_average >= 7
+                ? `rating-score high-score`
+                : `rating-score`
+            }
+          >
+            {movie.vote_average.toFixed(1)}
+          </p>
+          <FavsBtn
+            movie={movie}
+            className={'card-fav-btn'}
+            checkFav={checkFav}
+          />
           <div className="poster-overlay">
             <p className="hover-release-date">
               Release Date: <br />
@@ -37,7 +49,9 @@ const MovieCard = ({ movie, checkFav }) => {
             <Link to={`/movie/${movie.id}`}>More Info</Link>
           </div>
         </div>
-        <Link to={`/movie/${movie.id}`}><h3>{movie.title}</h3></Link>
+        <Link to={`/movie/${movie.id}`}>
+          <h3>{movie.title}</h3>
+        </Link>
       </div>
     </div>
   );
