@@ -1,9 +1,11 @@
 import { posterEndPoint } from '../globals/globalVariables';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const SingleMovieMedia = ({ movieVideos, movieGallery }) => {
   //function to find the first Youtube video result from the fetching movie trailers info
   const videoFromYoutube = () => {
-    const ytVideoResult = movieVideos.results.find(
+    const ytVideoResult = movieVideos.find(
       (video) => video.site === 'YouTube'
     );
 
@@ -29,14 +31,37 @@ const SingleMovieMedia = ({ movieVideos, movieGallery }) => {
     );
   };
 
+  const imagesCarousel = () => {
+    return (
+      <div className="carousel-section">
+        <h3>Images</h3>
+        <Carousel
+          showThumbs={false}
+          showStatus={false}
+          showIndicators={false}
+          autoPlay
+          interval={5000}
+          infiniteLoop={true}
+        >
+          {movieGallery.map((image, i) => {
+            return (
+              <div key={i}>
+                <img
+                  src={`${posterEndPoint}${image.file_path}`}
+                  alt="gallery of movie"
+                ></img>
+              </div>
+            );
+          })}
+        </Carousel>
+      </div>
+    );
+  };
+
   return (
     <section className="movie-media-section">
-      {movieVideos.results && videoFromYoutube()}
-      {movieGallery && movieGallery.map((image, i) => {
-        return (
-          <img src={`${posterEndPoint}${image.file_path}`} alt='gallery of movie' key={i}></img>
-        )
-      })}
+      {movieGallery && imagesCarousel()}
+      {movieVideos && videoFromYoutube()}
     </section>
   );
 };
