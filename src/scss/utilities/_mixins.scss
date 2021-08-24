@@ -38,10 +38,3 @@
   flex-direction: column;
 }
 
-//mixins for basic buttons in the site
-@mixin basic-button-style {
-  padding: 1rem;
-  background-color: $primary-color;
-  color: $secondary-color;
-  font-weight: 700;
-}
