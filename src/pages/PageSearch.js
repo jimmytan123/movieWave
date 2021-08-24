@@ -58,11 +58,18 @@ const PageSearch = () => {
 
   return (
     <main className="search-main-section">
+      <div className='hero'>
+        <p className="intro-p">
+          Millions of movies for you to discover. Explore now.
+        </p>
+      </div>
       <SearchForm searchMovie={searchMovie} />
       {displayEmptyResultMsg()}
       {movies && movies.length !== 0 && (
         <>
-          <h2 className='search-heading'>Show search result for: {displayTerm}</h2>
+          <h2 className="search-heading">
+            Show search result for: {displayTerm}
+          </h2>
           <Movies movies={movies} />
         </>
       )}
