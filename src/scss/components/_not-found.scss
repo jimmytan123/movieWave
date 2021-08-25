@@ -1,0 +1,32 @@
+@use '../base/variables' as *;
+@use '../utilities/mixins' as *;
+
+.notFound-main-section {
+  width: 100%;
+  div {
+    @include flex-layout-column-center;
+
+    h2 {
+      margin-top: 3rem;
+      font-size: 2rem;
+    }
+
+    a {
+      display: inline-block;
+      padding: $small-spacing;
+      background-color: $light;
+      color: $site-orange;
+      font-weight: 600;
+
+      &:hover, &:focus {
+        color: $site-blue;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    div h2 {
+      font-size: 3rem;
+    }
+  }
+}

@@ -42,7 +42,9 @@ const PageSingleMovie = () => {
             />
           </>
         ) : (
-          <div className="loader">Loading...</div>
+          <section className="loading-sect">
+            <div className="loader">Loading...</div>
+          </section>
         )}
       </div>
     </main>

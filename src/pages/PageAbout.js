@@ -11,7 +11,7 @@ const PageAbout = () => {
   return (
     <main className="about-main-section">
       <h2>
-        About{' '}
+        About {''}
         <span className="logo">
           <span className="logo-m">M</span>ovie
           <span className="logo-w">W</span>ave

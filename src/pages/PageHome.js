@@ -117,7 +117,9 @@ const PageHome = () => {
       {movies ? (
         <Movies movies={movies} />
       ) : (
-        <div className="loader">Loading...</div>
+        <section className='loading-sect'>
+          <div className="loader">Loading...</div>
+        </section>
       )}
 
       <ChangePageBtn
