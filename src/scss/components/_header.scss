@@ -9,7 +9,7 @@ header {
   .top-bar {
     @include flex-layout-row-between;
     padding: $base-spacing;
-    max-width: 1800px;
+    max-width: 1630px;
     margin: 0 auto;
 
     h1 {

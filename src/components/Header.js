@@ -6,7 +6,7 @@ import { hamburgerIcon, closeIcon } from '../globals/icon';
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
 
-  const handleClick = () => {
+  const handleShowHide = () => {
     setNavOpen(!navOpen);
   };
 
@@ -24,7 +24,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={navOpen ? 'show' : 'undefined'}>
+    <header className={navOpen ? 'show' : undefined}>
       <div className="top-bar">
         <h1>
           <NavLink to="/" className="site-logo">
@@ -34,7 +34,7 @@ const Header = () => {
           </NavLink>
         </h1>
         <button
-          onClick={handleClick}
+          onClick={handleShowHide}
           className="btn-main-nav"
           onMouseDown={(e) => {
             e.preventDefault();
@@ -42,7 +42,7 @@ const Header = () => {
         >
           {!navOpen ? hamburgerIcon : closeIcon}
         </button>
-        <Nav handleClick={handleClick} />
+        <Nav handleShowHide={handleShowHide} />
       </div>
     </header>
   );

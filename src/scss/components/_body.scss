@@ -4,7 +4,7 @@
 
 body {
   font-family: $site-font;
-  background-color: $light-grey;
+  background-color: $dark-grey;
   color: $light;
   line-height: $site-line-height;
 
@@ -29,14 +29,20 @@ body {
   }
 
   main {
-    width: 90%;
+    width: 100VW;
     max-width: $main-max-width;
     @include margin-center;
     flex: 1 1 auto;
+    background-color: $light-grey;
+    padding: 0 $medium-spacing;
   }
 
   main.singleMovie-main-section {
     max-width: 75rem;
+  }
+
+  main.search-main-section {
+    padding: 0;
   }
 
   // styling for loading spinners

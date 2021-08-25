@@ -4,7 +4,14 @@
 .about-main-section {
   text-align: center;
   padding: $small-spacing;
-  max-width: 56.25rem;
+  // max-width: 56.25rem;
+  width: 100%;
+
+  p {
+    max-width: 56.25rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   img {
     width: 100px;
