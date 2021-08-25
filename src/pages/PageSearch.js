@@ -2,12 +2,21 @@ import { useEffect, useState } from 'react';
 import Movies from '../components/Movies';
 import SearchForm from '../components/SearchForm';
 import { appTitle, API_KEY } from '../globals/globalVariables';
+import useGlobal from '../store/globalAppState';
 
 const PageSearch = () => {
   //change tab title when rendering
   useEffect(() => {
     document.title = `Search - ${appTitle}`;
   }, []);
+
+  const globalStateAndActions = useGlobal();
+  const globalActions = globalStateAndActions[1];
+
+  useEffect(() => {
+    //ensure local state favs in sync with favs in local storage
+    globalActions.setFavs();
+  }, [globalActions]);
 
   const [movies, setMovies] = useState(null);
   const [displayTerm, setDisplayTerm] = useState(null);
