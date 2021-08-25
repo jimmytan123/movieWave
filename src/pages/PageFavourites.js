@@ -22,7 +22,7 @@ const PageFavourites = () => {
   return (
     <main className="favourites-main-section">
       <h2>
-        <span className="orange-text">Favourites</span> Movie
+        <span className="orange-text">Favourites</span> Movies
       </h2>
       {globalState.favs.length === 0 ? (
         <p className="no-favs-text">

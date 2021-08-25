@@ -60,7 +60,7 @@ const PageSearch = () => {
     <main className="search-main-section">
       <div className="hero">
         <p className="intro-p">
-          Millions of movies for you to discover. Explore now.
+          Millions of amazing movies for you to discover. Explore now.
         </p>
         <SearchForm searchMovie={searchMovie} />
       </div>
