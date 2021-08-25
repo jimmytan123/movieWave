@@ -1,3 +1,5 @@
+//component for single movie media section (trailers, backdrops)
+
 import { posterEndPoint } from '../globals/globalVariables';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // webpack
 import { Carousel } from 'react-responsive-carousel'; //webpack

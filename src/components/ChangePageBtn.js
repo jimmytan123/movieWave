@@ -1,3 +1,5 @@
+//handle change page, and generating page dots
+
 import { rightArrowIcon, leftArrowIcon } from '../globals/icon';
 
 const ChangePageBtn = ({
@@ -61,6 +63,10 @@ const ChangePageBtn = ({
       {nextBtn()}
     </div>
   );
+};
+
+ChangePageBtn.defaultProps = {
+  maxPages: 5,
 };
 
 export default ChangePageBtn;

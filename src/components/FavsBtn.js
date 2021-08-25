@@ -1,3 +1,5 @@
+//fav / unfav button component, includes functions/actions related to favs/unfavs
+
 import { unFilledHeartIcon, filledHeartIcon } from '../globals/icon';
 import useGlobal from '../store/globalAppState';
 

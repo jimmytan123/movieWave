@@ -1,7 +1,9 @@
+import { getYear } from '../utilities/date';
+
 const Footer = () => {
     return (
         <footer>
-            <p>&copy; 2021 Jimmy Tan | For Educational Purposes Only</p>
+            <p>&copy; {getYear()} Jimmy Tan | For Educational Purposes Only</p>
         </footer>
     )
 }
