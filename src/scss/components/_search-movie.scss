@@ -4,7 +4,6 @@
 
 .search-main-section {
   width: 100%;
-
   display: flex;
   flex-direction: column;
 
@@ -12,6 +11,11 @@
   .movies-grid {
     width: 90%;
     margin: 0 auto;
+  }
+
+  h2.search-heading {
+    margin-top: $base-spacing;
+    margin-bottom: $base-spacing;
   }
 
   .error-msg {
@@ -33,14 +37,7 @@
     -moz-text-fill-color: transparent;
   }
 
-  h2.search-heading {
-    margin-top: $base-spacing;
-    margin-bottom: $base-spacing;
-  }
-
   .hero {
-    position: relative;
-
     background-image: linear-gradient(180deg, #00000088 33%, #ffffff44 100%),
       url(../../images/search-bg.png);
     width: 100%;
@@ -48,15 +45,17 @@
     background-position: bottom;
 
     min-height: 400px;
-    flex: 1 1 auto;
     margin-bottom: 0;
+    flex: 1 1 auto;
+
+    @include flex-layout-column-center;
 
     p.intro-p {
       font-weight: 700;
       font-size: 1.5rem;
       color: #fff;
 
-      margin: 0;
+      margin: 0 auto;
       padding: 0.5rem;
       width: 85%;
       text-transform: uppercase;
@@ -64,9 +63,7 @@
 
     @media (min-width: $breakpoint-mobile) {
       p.intro-p {
-        padding-top: 1rem;
-        padding-left: 1rem;
-        font-size: 2rem;
+        font-size: 2.3rem;
       }
     }
 
@@ -74,8 +71,6 @@
       p.intro-p {
         font-size: 2.5rem;
         width: 85%;
-        padding-top: 1.5rem;
-        padding-left: 1.5rem;
       }
     }
 
@@ -94,13 +89,7 @@
   }
 
   .search-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 95%;
-    margin: 0 auto;
-    text-align: center;
+    margin: 2rem auto;
 
     input {
       outline: none;
