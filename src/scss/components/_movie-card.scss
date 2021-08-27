@@ -89,9 +89,16 @@
     a {
       margin-top: 0.3rem;
       padding: 0.2rem 0.5rem;
-      background-color: $site-blue;
+      border: 1px solid $site-orange;
       border-radius: 6px;
-      font-weight: 600;
+      transition: all 0.4s;
+      font-size: 0.9rem;
+      color: $site-orange;
+
+      &:hover {
+        background-color: $site-orange;
+        color: $dark-grey;
+      }
     }
   }
 

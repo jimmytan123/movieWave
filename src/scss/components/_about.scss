@@ -2,24 +2,29 @@
 @use '../base/variables' as *;
 
 .about-main-section {
-  text-align: center;
-  padding: $small-spacing;
-  // max-width: 56.25rem;
+  text-align: left;
+  padding: $base-spacing;
   width: 100%;
+  line-height: 1.8;
 
-  p {
+  h2 {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  p, .tmdb-div {
     max-width: 56.25rem;
     margin-left: auto;
     margin-right: auto;
   }
 
-  img {
+  img.tmdb-logo {
     width: 100px;
     height: 100px;
   }
 
   .logo {
-      font-family: $logo-font;
+    font-family: $logo-font;
   }
 
   .logo-m {
