@@ -1,4 +1,22 @@
 const MovieSortSelect = ({ displayTitle, handleSortChange }) => {
+  const optionList = [
+    {
+      name: 'Popular',
+      value: 'popular',
+    },
+    {
+      name: 'Top Rated',
+      value: 'top_rated',
+    },
+    {
+      name: 'Now Playing',
+      value: 'now_playing',
+    },
+    {
+      name: 'Upcoming',
+      value: 'upcoming',
+    },
+  ];
   return (
     <section className="movie-sort-select">
       <div className="movie-sort-title">
@@ -9,10 +27,13 @@ const MovieSortSelect = ({ displayTitle, handleSortChange }) => {
       <form>
         <label htmlFor="selectSort">Display by: </label>
         <select name="selectSort" id="selectSort" onChange={handleSortChange}>
-          <option value="popular">Popular</option>
-          <option value="top_rated">Top Rated</option>
-          <option value="now_playing">Now Playing</option>
-          <option value="upcoming">Upcoming</option>
+          {optionList.map((option, i) => {
+            return (
+              <option value={option.value} key={i}>
+                {option.name}
+              </option>
+            );
+          })}
         </select>
       </form>
     </section>
