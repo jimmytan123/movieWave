@@ -3,6 +3,7 @@ import { useState } from 'react';
 const SearchForm = ({ searchMovie }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
+  //only call the API to search movie when clicking the submit button
   const handleSubmit = (e) => {
     e.preventDefault();
     searchMovie(searchTerm);

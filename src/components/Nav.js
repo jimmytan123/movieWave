@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { searchIcon } from '../globals/icon';
 
 const Nav = ({ handleShowHide }) => {
+  //when user clicks a link or the element lost focus, close the nav 
   const closeNav = (e) => {
     if (window.innerWidth < 576) {
       handleShowHide();

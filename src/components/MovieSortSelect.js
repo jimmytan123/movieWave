@@ -1,4 +1,5 @@
 const MovieSortSelect = ({ displayTitle, handleSortChange }) => {
+  //data for option list for form select
   const optionList = [
     {
       name: 'Popular',

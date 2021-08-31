@@ -6,6 +6,7 @@ import { hamburgerIcon, closeIcon } from '../globals/icon';
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
 
+  //function to toggle state to show/hide mobile navs when user click the hamburger/close button
   const handleShowHide = () => {
     setNavOpen(!navOpen);
   };
@@ -16,6 +17,7 @@ const Header = () => {
     }
   };
 
+  //when browser width is larger than 576px, close the mobile nav
   useEffect(() => {
     let mediaQuery = window.matchMedia('(min-width: 576px)');
     mediaQuery.addEventListener('change', isDesktop);

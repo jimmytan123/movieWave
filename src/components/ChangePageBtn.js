@@ -9,6 +9,7 @@ const ChangePageBtn = ({
   handleChoosePage,
   maxPages,
 }) => {
+  //function to return left arrow button, if current page is 1, disabled it
   const previousBtn = () => {
     if (pages === 1) {
       return (
@@ -24,7 +25,7 @@ const ChangePageBtn = ({
       );
     }
   };
-
+  //function to return next page(right arrow) button, if reaches the maximum pre-definded page, disabled it
   const nextBtn = () => {
     if (pages < maxPages) {
       return (
@@ -41,6 +42,8 @@ const ChangePageBtn = ({
     }
   };
 
+  //function to return page dot(indicator), add active class to the current pages
+  //add event listener to every dot to let user to click dot to go to certain pages they want
   const pageDots = () => {
     let dots = [];
     for (let i = 1; i <= maxPages; i++) {

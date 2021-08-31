@@ -1,4 +1,4 @@
-//fav / unfav button component, includes functions/actions related to favs/unfavs
+//fav & unfav button component, includes functions/actions related to favs/unfavs
 
 import { unFilledHeartIcon, filledHeartIcon } from '../globals/icon';
 import useGlobal from '../store/globalAppState';
@@ -6,6 +6,8 @@ import useGlobal from '../store/globalAppState';
 const FavsBtn = ({ movie, className, checkFav }) => {
   const [globalState, globalActions] = useGlobal();
 
+  //if there is no existing favs movies, return false;
+  //else, return true if the current movie belongs to the favs movies that are already stored in local storage
   const isFav = (id) => {
     if (globalState.favs.length === 0) {
       return false;

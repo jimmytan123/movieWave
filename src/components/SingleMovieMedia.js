@@ -6,6 +6,8 @@ import { Carousel } from 'react-responsive-carousel'; //webpack
 
 const SingleMovieMedia = ({ movieVideos, movieGallery }) => {
   //function to find the first Youtube video result from the fetching movie trailers info
+  //and use Youtube's iframe to show videos
+  //if no Youtube video link is found, return nothing;
   const videoFromYoutube = () => {
     const ytVideoResult = movieVideos.find((video) => video.site === 'YouTube');
 
@@ -29,6 +31,7 @@ const SingleMovieMedia = ({ movieVideos, movieGallery }) => {
     );
   };
 
+  //webpack for carousel, images coming from backdrop image from the single movie data
   const imagesCarousel = () => {
     return (
       <div className="carousel-section">
