@@ -3,10 +3,14 @@ import { useEffect, useState } from 'react';
 import { API_KEY } from '../globals/globalVariables';
 import SingleMovie from '../components/SingleMovie';
 import SingleMovieMedia from '../components/SingleMovieMedia';
+import useGlobal from '../store/globalAppState';
 
 const PageSingleMovie = () => {
   const { id } = useParams();
   const [movieData, setMovieData] = useState(null);
+
+  const globalStateAndActions = useGlobal();
+  const globalActions = globalStateAndActions[1];
 
   /*
   In order to reduce multiple fetching requests to reduce network data and also increase app efficiency, 
@@ -29,6 +33,11 @@ const PageSingleMovie = () => {
     };
     fetchSingleMovie();
   }, [id]);
+
+  useEffect(() => {
+    //ensure local state favs in sync with favs in local storage
+    globalActions.setFavs();
+  }, [globalActions]);
 
   return (
     <main className="singleMovie-main-section">
