@@ -117,7 +117,7 @@ const PageHome = () => {
       {movies ? (
         <Movies movies={movies} />
       ) : (
-        <section className='loading-sect'>
+        <section className="loading-sect">
           <div className="loader">Loading...</div>
         </section>
       )}
