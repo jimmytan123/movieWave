@@ -29,6 +29,10 @@
     }
   }
 
+  .movies-grid {
+    margin-bottom: 1rem;
+  }
+
   @media (min-width: $breakpoint-tablet) {
     h2 {
       text-align: left;

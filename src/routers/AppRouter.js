@@ -20,7 +20,7 @@ const AppRouter = () => {
     <Router>
       <div className="site-wrapper">
         <Header />
-        <main>
+        <main class='light-mode'>
           <Switch>
             <Route path='/' exact><PageHome /></Route>
             <Route path='/about'><PageAbout /></Route>

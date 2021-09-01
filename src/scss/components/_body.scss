@@ -5,7 +5,7 @@
 body {
   font-family: $site-font;
   background-color: $dark-grey;
-  color: $light;
+  //color: $light;
   line-height: $site-line-height;
 
   .site-wrapper {
@@ -41,6 +41,7 @@ body {
 
   .home-main-section {
     padding: 0 $medium-spacing;
+    width: 100%;
   }
 
   // styling for loading spinners
@@ -107,12 +108,22 @@ body {
   }
 }
 
-
-.light {
+//light mode styling
+.light-mode {
   color: $dark-grey;
   background-color: $light;
 
   .changePageBtn-section .page-indicator .dot {
     background-color: $dark-grey;
+  }
+}
+
+//dark mode styling
+.dark-mode {
+  color: $light;
+  background-color: $dark-grey;
+
+  .changePageBtn-section .page-indicator .dot {
+    background-color: $light;
   }
 }
