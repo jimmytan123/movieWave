@@ -21,8 +21,8 @@ const PageAbout = () => {
         Welcome to the MovieWave database. This is an online database where
         movie lovers can find the relevant movie information based on popular,
         top-rated, now playing and upcoming movies. Millions of movies allow
-        users to search and explore. This application also let user add and store movies to
-        the favourite list.
+        users to search and explore. This application also let user add and
+        store movies to the favourite list.
       </p>
       <p>
         MovieWave is a React JS project designed and developed by Jimmy (Zhixi)
@@ -32,7 +32,7 @@ const PageAbout = () => {
         This application uses the TMDb API but is not endorsed or certified by
         TMDb.
       </p>
-      <div className='tmdb-div'>
+      <div className="tmdb-div">
         <a
           href="https://www.themoviedb.org/"
           title="tmdb site"

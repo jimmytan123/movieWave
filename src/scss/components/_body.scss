@@ -108,21 +108,6 @@ body {
   }
 }
 
-//light mode styling
-.light-mode {
-  color: $dark-grey;
-  background-color: $light;
-  transition: background-color 0.3s ease-in-out;
-
-  h2 {
-    color: $dark-grey;
-  }
-
-  .changePageBtn-section .page-indicator .dot {
-    background-color: $dark-grey;
-  }
-}
-
 //dark mode styling
 .dark-mode {
   color: $light;
@@ -135,5 +120,24 @@ body {
 
   .changePageBtn-section .page-indicator .dot {
     background-color: $light;
+  }
+}
+
+//light mode styling
+.light-mode {
+  color: $dark-grey;
+  background-color: $light;
+  transition: background-color 0.3s ease-in-out;
+
+  h2 {
+    color: $light-grey;
+  }
+
+  .changePageBtn-section .page-indicator .dot {
+    background-color: $light-grey;
+  }
+
+  .movie-sort-select select {
+    background-color: $light-grey;
   }
 }

@@ -3,13 +3,28 @@
 @use '../utilities/mixins' as *;
 
 footer {
-    padding: $small-spacing $base-spacing;
-    background-color: $black;
-    text-align: center;
+  padding: 0.6rem $base-spacing;
+  background-color: $black;
+  text-align: center;
 
-    p {
-        margin: $small-spacing;
-        font-size: 0.8rem;
-        color: $light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin: $small-spacing;
+    font-size: 0.8rem;
+    color: $light;
+    margin-right: 1rem;
+  }
+
+  .dark-mode-toggle-btn {
+    display: block;
+    margin-left: 0.2rem;
+    padding: 0;
+
+    svg {
+      display: block;
     }
+  }
 }

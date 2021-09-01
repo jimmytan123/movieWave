@@ -1,10 +1,17 @@
 import { getYear } from '../utilities/date';
+import DarkModeToggle from 'react-dark-mode-toggle';
 
-const Footer = ({ toggleMode }) => {
+const Footer = ({ isDarkMode, setIsDarkMode }) => {
   return (
     <footer>
       <p>&copy; {getYear()} Jimmy Tan | For Educational Purposes Only</p>
-      <button onClick={toggleMode}>change mode</button>
+      <DarkModeToggle
+        onChange={setIsDarkMode}
+        size={63}
+        checked={isDarkMode}
+        speed={1.2}
+        className="dark-mode-toggle-btn"
+      />
     </footer>
   );
 };

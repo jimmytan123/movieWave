@@ -18,17 +18,15 @@ import Page404 from '../pages/Page404';
 
 const AppRouter = () => {
 
-  const [darkmode, setDarkMode] = useState(true);
-
-  const toggleMode = () => {
-    setDarkMode(!darkmode);
-  }
+  //state for light/dark mode theme for the application
+  //default is set to dark mode, can toggle mode via the button in site footer
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   return (
     <Router>
       <div className="site-wrapper">
         <Header />
-        <main className={darkmode ? 'dark-mode' : 'light-mode'}>
+        <main className={isDarkMode ? 'dark-mode' : 'light-mode'}>
           <Switch>
             <Route path='/' exact><PageHome /></Route>
             <Route path='/about'><PageAbout /></Route>
@@ -38,7 +36,7 @@ const AppRouter = () => {
             <Route><Page404 /></Route>
           </Switch>
         </main>
-        <Footer toggleMode={toggleMode} />
+        <Footer isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       </div>
     </Router>
   );
