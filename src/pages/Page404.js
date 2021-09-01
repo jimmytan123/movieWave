@@ -9,12 +9,12 @@ const Page404 = () => {
   }, []);
 
   return (
-    <main className="notFound-main-section">
+    <section className="notFound-main-section">
       <div>
         <h2>Page Not Found</h2>
         <Link to={'/'}>Back to Home</Link>
       </div>
-    </main>
+    </section>
   );
 };
 

@@ -108,7 +108,7 @@ const PageHome = () => {
   };
 
   return (
-    <main className="home-main-section">
+    <section className="home-main-section">
       <MovieSortSelect
         displayTitle={displayTitle}
         handleSortChange={handleSortChange}
@@ -129,7 +129,7 @@ const PageHome = () => {
         handleChoosePage={handleChoosePage}
         maxPages={5}
       />
-    </main>
+    </section>
   );
 };
 

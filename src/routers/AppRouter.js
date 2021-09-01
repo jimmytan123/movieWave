@@ -20,6 +20,7 @@ const AppRouter = () => {
     <Router>
       <div className="site-wrapper">
         <Header />
+        <main>
           <Switch>
             <Route path='/' exact><PageHome /></Route>
             <Route path='/about'><PageAbout /></Route>
@@ -28,6 +29,7 @@ const AppRouter = () => {
             <Route path='/search'><PageSearch /></Route>
             <Route><Page404 /></Route>
           </Switch>
+        </main>
         <Footer />
       </div>
     </Router>

@@ -40,7 +40,7 @@ const PageSingleMovie = () => {
   }, [globalActions]);
 
   return (
-    <main className="singleMovie-main-section">
+    <section className="singleMovie-main-section">
       <div className="single-movie">
         {movieData ? (
           <>
@@ -56,7 +56,7 @@ const PageSingleMovie = () => {
           </section>
         )}
       </div>
-    </main>
+    </section>
   );
 };
 

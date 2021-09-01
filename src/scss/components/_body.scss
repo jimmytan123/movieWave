@@ -33,15 +33,13 @@ body {
     @include margin-center;
     flex: 1 1 auto;
     background-color: $light-grey;
-    padding: 0 $medium-spacing;
+    // padding: 0 $medium-spacing;
 
     width: 100%;
   }
 
- 
-
-  main.search-main-section {
-    padding: 0;
+  .home-main-section {
+    padding: 0 $medium-spacing;
   }
 
   // styling for loading spinners
@@ -105,5 +103,15 @@ body {
         height: 5em;
       }
     }
+  }
+}
+
+
+.light {
+  color: $dark-grey;
+  background-color: $light;
+
+  .changePageBtn-section .page-indicator .dot {
+    background-color: $dark-grey;
   }
 }

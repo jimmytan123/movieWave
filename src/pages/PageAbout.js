@@ -9,7 +9,7 @@ const PageAbout = () => {
   }, []);
 
   return (
-    <main className="about-main-section">
+    <section className="about-main-section">
       <h2>
         About {''}
         <span className="logo">
@@ -42,7 +42,7 @@ const PageAbout = () => {
           <img className="tmdb-logo" src={tmdbLogo} alt="TMDB Logo" />
         </a>
       </div>
-    </main>
+    </section>
   );
 };
 
