@@ -1,5 +1,6 @@
 // Development Components
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useState } from 'react';
 
 //Components
 import Header from '../components/Header';
@@ -16,11 +17,18 @@ import Page404 from '../pages/Page404';
 
 
 const AppRouter = () => {
+
+  const [darkmode, setDarkMode] = useState(true);
+
+  const toggleMode = () => {
+    setDarkMode(!darkmode);
+  }
+
   return (
     <Router>
       <div className="site-wrapper">
         <Header />
-        <main class='dark-mode'>
+        <main className={darkmode ? 'dark-mode' : 'light-mode'}>
           <Switch>
             <Route path='/' exact><PageHome /></Route>
             <Route path='/about'><PageAbout /></Route>
@@ -30,7 +38,7 @@ const AppRouter = () => {
             <Route><Page404 /></Route>
           </Switch>
         </main>
-        <Footer />
+        <Footer toggleMode={toggleMode} />
       </div>
     </Router>
   );

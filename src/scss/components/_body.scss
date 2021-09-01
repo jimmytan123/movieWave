@@ -112,6 +112,11 @@ body {
 .light-mode {
   color: $dark-grey;
   background-color: $light;
+  transition: background-color 0.3s ease-in-out;
+
+  h2 {
+    color: $dark-grey;
+  }
 
   .changePageBtn-section .page-indicator .dot {
     background-color: $dark-grey;
@@ -122,6 +127,11 @@ body {
 .dark-mode {
   color: $light;
   background-color: $light-grey;
+  transition: background-color 0.3s ease-in-out;
+
+  h2 {
+    color: $light;
+  }
 
   .changePageBtn-section .page-indicator .dot {
     background-color: $light;
