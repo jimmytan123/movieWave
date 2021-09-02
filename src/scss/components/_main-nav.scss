@@ -12,11 +12,17 @@
   transition: all 0.4s;
 
   position: absolute;
-  top: 68px;
+  top: 64px;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 9;
+
+  .show & {
+    height: 266.78px;
+    visibility: visible;
+    transition: all 0.4s;
+  }
 
   ul {
     @include ul-base;
@@ -37,7 +43,6 @@
 
   .search-icon-link {
     display: block;
-    margin: $base-spacing $small-spacing;
 
     svg {
       fill: $light;
@@ -49,14 +54,6 @@
       }
     }
   }
-
-  .show & {
-    height: 266.78px;
-    visibility: visible;
-    transition: all 0.4s;
-  }
-
- 
 
   .dark-mode-toggle-btn {
     display: block;
@@ -93,6 +90,11 @@
     a {
       margin: 0 $base-spacing;
     }
+
+    li {
+      margin-left: 0.3rem;
+      margin-right: 0.3rem;
+    }
   }
 
   @media (min-width: $breakpoint-tablet) {
@@ -103,6 +105,11 @@
 
     .dark-mode-toggle-btn {
       margin: 0 0 0 $medium-spacing;
+    }
+
+    li {
+      margin-left: 0;
+      margin-right: 0;
     }
 
     .mode-toggle-li {
