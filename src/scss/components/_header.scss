@@ -48,14 +48,18 @@ header {
 
   @media (min-width: $breakpoint-mobile) {
     .top-bar {
+      flex-direction: column;
+      justify-content: center;
       a.site-logo {
         font-size: 1.8rem;
       }
     }
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: $breakpoint-tablet) {
     .top-bar {
+      flex-direction: row;
+      justify-content: space-between;
       a.site-logo {
         font-size: 2rem;
       }

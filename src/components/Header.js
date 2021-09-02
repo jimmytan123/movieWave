@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Nav from './Nav';
 import { hamburgerIcon, closeIcon } from '../globals/icon';
 
-const Header = () => {
+const Header = ({ isDarkMode, setIsDarkMode }) => {
   const [navOpen, setNavOpen] = useState(false);
 
   //function to toggle state to show/hide mobile navs when user click the hamburger/close button
@@ -44,7 +44,11 @@ const Header = () => {
         >
           {!navOpen ? hamburgerIcon : closeIcon}
         </button>
-        <Nav handleShowHide={handleShowHide} />
+        <Nav
+          handleShowHide={handleShowHide}
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
+        />
       </div>
     </header>
   );

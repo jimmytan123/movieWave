@@ -37,23 +37,38 @@
 
   .search-icon-link {
     display: block;
-    margin: $small-spacing;
+    margin: $base-spacing $small-spacing;
+
+    svg {
+      fill: $light;
+      display: block;
+      margin: 0 auto;
+      transition: all 0.4s;
+      &:hover {
+        fill: $site-blue;
+      }
+    }
   }
 
   .show & {
-    height: 215px;
+    height: 266.78px;
     visibility: visible;
     transition: all 0.4s;
   }
 
-  svg {
-    fill: $light;
+ 
+
+  .dark-mode-toggle-btn {
     display: block;
     margin: 0 auto;
-    transition: all 0.4s;
-    &:hover {
-      fill: $site-blue;
+
+    svg {
+      display: block;
     }
+  }
+
+  .mode-toggle-li {
+    margin: $base-spacing $small-spacing;
   }
 
   @media (min-width: $breakpoint-mobile) {
@@ -82,8 +97,16 @@
 
   @media (min-width: $breakpoint-tablet) {
     a,
-    .search-icon-link {
+    .search-icon-link{
       margin: 0 $medium-spacing;
+    }
+
+    .dark-mode-toggle-btn {
+      margin: 0 0 0 $medium-spacing;
+    }
+
+    .mode-toggle-li {
+      margin: 0;
     }
   }
 }
