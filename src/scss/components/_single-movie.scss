@@ -2,6 +2,11 @@
 @use '../base/variables' as *;
 @use '../utilities/mixins' as *;
 
+.singleMovie-main-section {
+  padding: 0 $medium-spacing;
+  width: 100%;
+}
+
 .single-movie {
   margin: $base-spacing 0.3rem;
   background-color: $dark-grey;
@@ -12,6 +17,7 @@
   p {
     line-height: 1.8;
     margin-right: $small-spacing;
+    color: $light;
   }
 
   img {
@@ -32,6 +38,7 @@
 
   h2 {
     margin-bottom: 0;
+    color: $light;
   }
 
   .singlePage-fav-btn {
@@ -137,7 +144,6 @@
     padding: $base-spacing;
     max-width: 600px;
     margin: 1rem auto;
-
 
     h3 {
       margin: 0 0 $base-spacing 0;

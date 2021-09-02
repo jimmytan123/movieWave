@@ -108,7 +108,7 @@ const PageHome = () => {
   };
 
   return (
-    <main className="home-main-section">
+    <section className="home-main-section">
       <MovieSortSelect
         displayTitle={displayTitle}
         handleSortChange={handleSortChange}
@@ -117,7 +117,7 @@ const PageHome = () => {
       {movies ? (
         <Movies movies={movies} />
       ) : (
-        <section className='loading-sect'>
+        <section className="loading-sect">
           <div className="loader">Loading...</div>
         </section>
       )}
@@ -129,7 +129,7 @@ const PageHome = () => {
         handleChoosePage={handleChoosePage}
         maxPages={5}
       />
-    </main>
+    </section>
   );
 };
 

@@ -1,5 +1,6 @@
 // Development Components
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useState } from 'react';
 
 //Components
 import Header from '../components/Header';
@@ -16,10 +17,16 @@ import Page404 from '../pages/Page404';
 
 
 const AppRouter = () => {
+
+  //state for light/dark mode theme for the application
+  //default is set to dark mode, can toggle mode via the button in site header
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
   return (
     <Router>
       <div className="site-wrapper">
-        <Header />
+        <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+        <main className={isDarkMode ? 'dark-mode' : 'light-mode'}>
           <Switch>
             <Route path='/' exact><PageHome /></Route>
             <Route path='/about'><PageAbout /></Route>
@@ -28,6 +35,7 @@ const AppRouter = () => {
             <Route path='/search'><PageSearch /></Route>
             <Route><Page404 /></Route>
           </Switch>
+        </main>
         <Footer />
       </div>
     </Router>

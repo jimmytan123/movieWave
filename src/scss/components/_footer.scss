@@ -3,12 +3,18 @@
 @use '../utilities/mixins' as *;
 
 footer {
-    padding: $small-spacing $base-spacing;
-    background-color: $black;
-    text-align: center;
+  padding: 0.6rem $base-spacing;
+  background-color: $black;
+  text-align: center;
 
-    p {
-        margin: $small-spacing;
-        font-size: 0.8rem;
+  p {
+    margin: $small-spacing;
+    font-size: 0.8rem;
+    color: $light;
+
+    a:hover {
+      color: $site-blue;
+      transition: all 0.3s;;
     }
+  }
 }

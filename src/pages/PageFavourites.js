@@ -20,7 +20,7 @@ const PageFavourites = () => {
   }, [globalActions]);
 
   return (
-    <main className="favourites-main-section">
+    <section className="favourites-main-section">
       <h2>
         <span className="orange-text">Favourites</span> Movies
       </h2>
@@ -32,7 +32,7 @@ const PageFavourites = () => {
       ) : (
         checkReady && <Movies movies={globalState.favs} checkFav={false} />
       )}
-    </main>
+    </section>
   );
 };
 

@@ -2,6 +2,8 @@
 @use '../base/variables' as *;
 
 .favourites-main-section {
+  padding: 0 $medium-spacing;
+
   .orange-text {
     color: $site-orange;
   }
@@ -25,6 +27,10 @@
       margin: 0 $small-spacing;
       fill: $site-blue;
     }
+  }
+
+  .movies-grid {
+    margin-bottom: 1rem;
   }
 
   @media (min-width: $breakpoint-tablet) {

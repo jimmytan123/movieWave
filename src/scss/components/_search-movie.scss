@@ -6,11 +6,14 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 0;
+
 
   h2.search-heading,
   .movies-grid {
     width: 90%;
     margin: 0 auto;
+    margin-bottom: $base-spacing;
   }
 
   h2.search-heading {
@@ -106,18 +109,19 @@
       display: inline-block;
       padding: 0.5rem;
       margin: $small-spacing;
-      border-radius: 5px;
+      border-radius: 7px;
       outline: none;
       border: none;
       transition: all 0.3s;
       cursor: pointer;
       font-weight: 600;
-      background-color: $light;
+      //background-color: $light;
+      background-color: $site-orange;
+      color: $light;
 
       &:hover,
       &:focus {
-        background-color: $site-orange;
-        color: $light;
+        color: $dark-grey;
       }
     }
 

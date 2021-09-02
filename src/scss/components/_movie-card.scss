@@ -59,10 +59,12 @@
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.75);
+    color: $light;
     border-radius: 5px;
     text-align: center;
     overflow: hidden;
     opacity: 0;
+    backdrop-filter: blur(3px);
     transition: all 0.2s;
 
     p {

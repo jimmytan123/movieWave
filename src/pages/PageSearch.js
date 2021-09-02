@@ -66,7 +66,7 @@ const PageSearch = () => {
   };
 
   return (
-    <main className="search-main-section">
+    <section className="search-main-section">
       <div className="hero">
         <p className="intro-p">
           Millions of amazing movies for you to discover. Explore now.
@@ -82,7 +82,7 @@ const PageSearch = () => {
           <Movies movies={movies} />
         </>
       )}
-    </main>
+    </section>
   );
 };
 
