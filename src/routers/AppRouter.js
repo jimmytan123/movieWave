@@ -14,6 +14,7 @@ import PageSingleMovie from '../pages/PageSingleMovie';
 import PageSearch from '..//pages/PageSearch';
 import Page404 from '../pages/Page404';
 
+import { APP_FOLDER_NAME } from '../globals/globalVariables';
 
 
 const AppRouter = () => {
@@ -23,7 +24,7 @@ const AppRouter = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   return (
-    <Router>
+    <Router basename={APP_FOLDER_NAME}>
       <div className="site-wrapper">
         <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         <main className={isDarkMode ? 'dark-mode' : 'light-mode'}>
