@@ -20,7 +20,7 @@
   z-index: 9;
 
   .show & {
-    width: 100vw;
+    width: 100%;
     visibility: visible;
     transition: all 0.4s;
   }
