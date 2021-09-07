@@ -30,7 +30,7 @@ header {
       color: $site-blue;
     }
 
-    button {
+    button.btn-main-nav {
       background: none;
       color: inherit;
       border: none;
@@ -38,10 +38,20 @@ header {
       font: inherit;
       cursor: pointer;
       outline: inherit;
+      z-index: 10;
 
       svg {
         fill: $light;
         display: block;
+      }
+    }
+  }
+
+  &.show {
+    .top-bar {
+      button.btn-main-nav {
+        position: fixed;
+        right: 1rem;
       }
     }
   }

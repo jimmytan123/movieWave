@@ -3,7 +3,7 @@ import { searchIcon } from '../globals/icon';
 import DarkModeToggle from 'react-dark-mode-toggle';
 
 const Nav = ({ handleShowHide, isDarkMode, setIsDarkMode }) => {
-  //when user clicks a link or the element lost focus, close the nav
+  //when user clicks a menu link or the element lost focus within the nav menu, close it
   const closeNav = (e) => {
     if (window.innerWidth < 576) {
       handleShowHide();
