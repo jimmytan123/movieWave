@@ -73,12 +73,6 @@
     margin: $base-spacing $small-spacing;
   }
 
-  // @media (min-width: 500px) {
-  //   .show & {
-  //     width: 235px;
-  //   }
-  // }
-
   @media (min-width: $breakpoint-mobile) {
     visibility: visible;
     transition: none;
