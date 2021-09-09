@@ -47,29 +47,26 @@
       padding: 0.3rem 0.7rem;
       background-color: $light-grey;
       border-radius: 10px;
-
-      svg {
-        transition: all 0.3s;
-      }
+      transition: all 0.3s;
 
       &:hover {
-        box-shadow: rgba(#fff, 0.3) 0px 0px 0px 3px;
+        box-shadow: rgba(#fff, 0.3) 0px 0px 0px 2px;
 
         svg {
           animation: shake 200ms infinite;
           animation-timing-function: linear;
         }
-      }
 
-      @keyframes shake {
-        0% {
-          transform: rotate(8deg);
-        }
-        50% {
-          transform: rotate(-8deg);
-        }
-        100% {
-          transform: rotate(8deg);
+        @keyframes shake {
+          0% {
+            transform: rotate(8deg);
+          }
+          50% {
+            transform: rotate(-8deg);
+          }
+          100% {
+            transform: rotate(8deg);
+          }
         }
       }
     }
@@ -122,11 +119,6 @@
     text-align: center;
     font-size: 0.9rem;
   }
-
-  // .movie-media-section {
-  //   background-color: rgba($light, 0.2);
-  //   border-radius: 10px;
-  // }
 
   .movie-video-section {
     display: flex;

@@ -36,7 +36,6 @@
   .rating-score {
     font-weight: 700;
     font-size: 1.2rem;
-    color: $site-blue;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -48,6 +47,14 @@
 
     &.high-score {
       color: $site-orange;
+    }
+
+    &.low-score {
+      color: $site-blue;
+    }
+
+    &.none-score {
+      color: rgba($light, 0.7);
     }
   }
 

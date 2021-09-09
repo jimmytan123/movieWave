@@ -31,7 +31,7 @@
 
     &.disabled {
       svg {
-        fill: #7e7f83;
+        fill: rgba($light, 0.4);
       }
     }
   }

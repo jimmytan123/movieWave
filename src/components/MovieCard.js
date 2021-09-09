@@ -4,6 +4,16 @@ import noPoster from '../images/no-poster-holder.png';
 import FavsBtn from './FavsBtn';
 
 const MovieCard = ({ movie, checkFav }) => {
+  const setRatingScoreClass = () => {
+    if (movie.vote_average >= 7) {
+      return 'high-score';
+    } else if (movie.vote_average === 0) {
+      return 'none-score';
+    } else {
+      return 'low-score';
+    }
+  };
+
   return (
     <div className="single-movie-card">
       <div className="movie-card-content">
@@ -16,13 +26,7 @@ const MovieCard = ({ movie, checkFav }) => {
               alt={`poster of ${movie.title}`}
             />
           )}
-          <p
-            className={
-              movie.vote_average >= 7
-                ? `rating-score high-score`
-                : `rating-score`
-            }
-          >
+          <p className={`rating-score ${setRatingScoreClass()}`}>
             {movie.vote_average.toFixed(1)}
           </p>
           <FavsBtn
