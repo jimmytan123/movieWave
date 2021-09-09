@@ -12,9 +12,9 @@ const PageSearch = () => {
 
   const globalStateAndActions = useGlobal();
   const globalActions = globalStateAndActions[1];
-
+  
+  //ensure local state favs in sync with favs in local storage
   useEffect(() => {
-    //ensure local state favs in sync with favs in local storage
     globalActions.setFavs();
   }, [globalActions]);
 

@@ -9,24 +9,30 @@
   width: 60%;
   margin: $base-spacing auto;
 
-  button {
+  button.page-btn {
     background: none;
     border: none;
     padding: 0.5rem 0.6rem;
     background-color: $dark-grey;
     cursor: pointer;
     border-radius: 8px;
-  }
 
-  svg {
-    display: block;
-    fill: $light;
-    transition: all 0.3s;
+    svg {
+      display: block;
+      fill: $light;
+      transition: all 0.3s;
 
-    &:hover,
-    &:active,
-    &:focus {
-      fill: $site-orange;
+      &:hover,
+      &:active,
+      &:focus {
+        fill: $site-orange;
+      }
+    }
+
+    &.disabled {
+      svg {
+        fill: #7e7f83;
+      }
     }
   }
 

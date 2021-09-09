@@ -13,7 +13,7 @@ const ChangePageBtn = ({
   const previousBtn = () => {
     if (pages === 1) {
       return (
-        <button className="page-btn" disabled>
+        <button className="page-btn disabled" disabled>
           {leftArrowIcon}
         </button>
       );
@@ -35,7 +35,7 @@ const ChangePageBtn = ({
       );
     } else {
       return (
-        <button className="page-btn" disabled>
+        <button className="page-btn disabled" disabled>
           {rightArrowIcon}
         </button>
       );

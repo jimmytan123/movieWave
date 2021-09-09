@@ -25,8 +25,11 @@ const PageAbout = () => {
         store movies to the favourite list.
       </p>
       <p>
-        MovieWave is a React JS project designed and developed by Jimmy (Zhixi)
-        Tan.
+        MovieWave is a React JS project designed and developed by{' '}
+        <a href="https://ztan.ca/" target="_blank" rel="noreferrer">
+          Jimmy (Zhixi) Tan
+        </a>
+        .
       </p>
       <p>
         This application uses the TMDb API but is not endorsed or certified by
