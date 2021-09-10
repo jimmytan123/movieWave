@@ -3,6 +3,9 @@ import noPoster from '../images/no-poster-holder.png';
 import { posterEndPoint, appTitle } from '../globals/globalVariables';
 import FavsBtn from './FavsBtn';
 
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+
 const SingleMovie = ({ movie }) => {
   //change tab title when rendering
   useEffect(() => {
@@ -29,7 +32,7 @@ const SingleMovie = ({ movie }) => {
     return resultList;
   };
 
-  //function to convert pure minutes into hours and minutes
+  //function to convert pure minutes from API into hours and minutes format
   const runtimeInHoursAndMins = (pureMintues) => {
     const hours = Math.floor(pureMintues / 60);
     const minutes = pureMintues % 60;
@@ -58,7 +61,18 @@ const SingleMovie = ({ movie }) => {
             </div>
             <div className="voteAndFav-info">
               <div className="single-movie-scoreBox">
-                {movie.vote_average.toFixed(1)}
+                {/* {movie.vote_average.toFixed(1)} */}
+                <CircularProgressbar
+                  value={movie.vote_average.toFixed(1)}
+                  maxValue={10}
+                  text={`${movie.vote_average.toFixed(1) * 10}%`}
+                  styles={buildStyles({
+                    textColor: '#ff983d',
+                    trailColor: '#f4f4f4',
+                    textSize: '30px',
+                    pathColor: 'rgb(0, 196, 255)',
+                  })}
+                />
               </div>
               <FavsBtn movie={movie} className={'singlePage-fav-btn'} />
             </div>
