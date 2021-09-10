@@ -14,7 +14,7 @@ const SingleMovie = ({ movie }) => {
     const results = movie.credits.crew.filter(
       (person) => person.job === position
     );
-    console.log(results);
+    //console.log(results);
 
     if (results.length === 0) {
       return <p>{position} coming soon...</p>;

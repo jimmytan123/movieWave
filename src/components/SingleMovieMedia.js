@@ -17,16 +17,20 @@ const SingleMovieMedia = ({ movieVideos, movieGallery }) => {
 
     return (
       <div className="movie-video-section">
-        <h3>{ytVideoResult.name}</h3>
-        <iframe
-          width="560"
-          height="315"
-          src={`https://www.youtube.com/embed/${ytVideoResult.key}?rel=0`}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        {/* <h3>{ytVideoResult.name}</h3> */}
+        <h3>Video</h3>
+        <figure>
+          <iframe
+            width="560"
+            height="320"
+            src={`https://www.youtube.com/embed/${ytVideoResult.key}?rel=0`}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+          <figcaption>{ytVideoResult.name}</figcaption>
+        </figure>
       </div>
     );
   };
@@ -36,25 +40,28 @@ const SingleMovieMedia = ({ movieVideos, movieGallery }) => {
     return (
       <div className="carousel-section">
         <h3>Images</h3>
-        <Carousel
-          showThumbs={false}
-          showStatus={false}
-          showIndicators={false}
-          autoPlay
-          interval={5000}
-          infiniteLoop={true}
-        >
-          {movieGallery.map((image, i) => {
-            return (
-              <div key={i}>
-                <img
-                  src={`${posterEndPoint}${image.file_path}`}
-                  alt="gallery of movie"
-                ></img>
-              </div>
-            );
-          })}
-        </Carousel>
+        <figure>
+          <Carousel
+            showThumbs={false}
+            showStatus={false}
+            showIndicators={false}
+            autoPlay
+            interval={5000}
+            infiniteLoop={true}
+          >
+            {movieGallery.map((image, i) => {
+              return (
+                <div key={i}>
+                  <img
+                    src={`${posterEndPoint}${image.file_path}`}
+                    alt="gallery of movie"
+                  />
+                </div>
+              );
+            })}
+          </Carousel>
+          <figcaption>Backdrops</figcaption>
+        </figure>
       </div>
     );
   };
