@@ -26,7 +26,7 @@ const PageAbout = () => {
       </p>
       <p>
         MovieWave is a React JS project designed and developed by{' '}
-        <a href="https://ztan.ca/" target="_blank" rel="noreferrer">
+        <a href="https://ztan.ca/" target="_blank" rel="noreferrer" className='about-page-link'>
           Jimmy (Zhixi) Tan
         </a>
         .
