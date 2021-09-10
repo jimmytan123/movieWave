@@ -86,6 +86,10 @@
       margin-right: 1rem;
     }
 
+    p:nth-of-type(2) {
+      margin-right: 0;
+    }
+
     p {
       opacity: 0.65;
     }
@@ -97,13 +101,19 @@
 
     .single-movie-scoreBox {
       margin-right: 1rem;
-      padding: 0.2rem 0.6rem;
-      background-color: $light-grey;
+      //padding: 0.2rem 0.6rem;
+      //background-color: $light-grey;
       border-radius: 10px;
       font-weight: 600;
       font-size: 1.2rem;
       color: $site-blue;
+
+      width: 50px;
     }
+  }
+
+  .sub-icon-group {
+    margin-top: 0.8rem;
   }
 
   .genre-list {
