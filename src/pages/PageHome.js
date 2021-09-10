@@ -47,7 +47,7 @@ const PageHome = () => {
           },
         });
         let data = await res.json();
-        //console.log(data.results);
+        console.log(data.results);
         setMovies(data.results);
       } catch (err) {
         console.log(err.message);

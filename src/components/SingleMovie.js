@@ -9,15 +9,24 @@ const SingleMovie = ({ movie }) => {
     document.title = `${movie.title} - ${appTitle}`;
   }, [movie.title]);
 
-  //function to return director's name from the movie crew data
-  const getDirector = () => {
-    const result = movie.credits.crew.find(
-      (person) => person.job === 'Director'
+  //function to return the crew's name from the movie crew data by passing a postion parameter
+  const getCrewInfo = (position) => {
+    const results = movie.credits.crew.filter(
+      (person) => person.job === position
     );
-    if (result === undefined) {
-      return 'Director coming soon...';
+    console.log(results);
+
+    if (results.length === 0) {
+      return <p>{position} coming soon...</p>;
     }
-    return result.name;
+
+    const resultList = results.map((result, i) => (
+      <p key={i} className="crew">
+        {result.name}
+      </p>
+    ));
+
+    return resultList;
   };
 
   //function to convert pure minutes into hours and minutes
@@ -72,9 +81,17 @@ const SingleMovie = ({ movie }) => {
                 )}
               </div>
             </div>
-            <div className="crew-info">
+            <div className="director-info">
               <h3>Director</h3>
-              {movie.credits.crew && <p>{getDirector()}</p>}
+              {movie.credits.crew && getCrewInfo('Director')}
+            </div>
+            <div className="producer-info">
+              <h3>Producer</h3>
+              {movie.credits.crew && getCrewInfo('Producer')}
+            </div>
+            <div className="screenplay-info">
+              <h3>Screenplay</h3>
+              {movie.credits.crew && getCrewInfo('Screenplay')}
             </div>
           </div>
         </div>
