@@ -2,10 +2,18 @@
 @use '../base/variables' as *;
 @use '../utilities/mixins' as *;
 
+//css variables for color theme toggle within main tag 
+:root {
+  --text-color-dark: #{$light};
+  --bg-color-dark: #{$light-grey};
+  --text-color-light: #{$dark-grey};
+  --bg-color-light: #{$light-bg};
+  --sec-text-color-light: #{$light-grey};
+}
+
 body {
   font-family: $site-font;
   background-color: $dark-grey;
-  //color: $light;
   line-height: $site-line-height;
 
   .site-wrapper {
@@ -33,7 +41,6 @@ body {
     @include margin-center;
     flex: 1 1 auto;
     background-color: $light-grey;
-    // padding: 0 $medium-spacing;
     display: flex;
 
     width: 100%;
@@ -108,40 +115,40 @@ body {
   }
 }
 
-//dark mode styling
+// --- dark mode styling --- mode color changes only applies for <main> area
 .dark-mode {
-  color: $light;
-  background-color: $light-grey;
+  color: var(--text-color-dark);
+  background-color: var(--bg-color-dark);
   transition: background-color 0.3s ease-in-out;
 
   h2 {
-    color: $light;
+    color: var(--text-color-dark);
   }
 
   .changePageBtn-section .page-indicator .dot {
-    background-color: $light;
+    background-color: var(--text-color-dark);
   }
 }
 
-//light mode styling
+// --- light mode styling --- mode color changes only applies for <main> area
 .light-mode {
-  color: $dark-grey;
-  background-color: $light;
+  color: var(--text-color-light);
+  background-color: var(--bg-color-light);
   transition: background-color 0.3s ease-in-out;
 
   h2 {
-    color: $light-grey;
+    color: var(--sec-text-color-light);
   }
 
   .changePageBtn-section .page-indicator .dot {
-    background-color: $light-grey;
+    background-color: var(--sec-text-color-light);
   }
 
   .movie-sort-select select {
-    background-color: $light-grey;
+    background-color: var(--sec-text-color-light);
   }
 
   .about-page-link {
-    color: $dark-grey;
+    color: var(--text-color-light);
   }
 }
