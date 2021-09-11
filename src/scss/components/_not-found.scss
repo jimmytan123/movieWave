@@ -8,14 +8,15 @@
     @include flex-layout-column-center;
 
     h2 {
-      margin-top: 3rem;
+      margin-top: 3.5rem;
       font-size: 2rem;
+      text-align: center;
     }
 
     a {
       display: inline-block;
       padding: $small-spacing;
-      background-color: $light;
+      //background-color: $light;
       color: $site-orange;
       font-weight: 600;
 

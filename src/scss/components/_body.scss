@@ -2,12 +2,13 @@
 @use '../base/variables' as *;
 @use '../utilities/mixins' as *;
 
+//css variables for color theme toggle within main tag 
 :root {
   --text-color-dark: #{$light};
   --bg-color-dark: #{$light-grey};
   --text-color-light: #{$dark-grey};
-  --bg-color-light: #{$light};
-  --atl-text-color-light: #{$light-grey};
+  --bg-color-light: #{$light-bg};
+  --sec-text-color-light: #{$light-grey};
 }
 
 body {
@@ -136,15 +137,15 @@ body {
   transition: background-color 0.3s ease-in-out;
 
   h2 {
-    color: var(--atl-text-color-light);
+    color: var(--sec-text-color-light);
   }
 
   .changePageBtn-section .page-indicator .dot {
-    background-color: var(--atl-text-color-light);
+    background-color: var(--sec-text-color-light);
   }
 
   .movie-sort-select select {
-    background-color: var(--atl-text-color-light);
+    background-color: var(--sec-text-color-light);
   }
 
   .about-page-link {
