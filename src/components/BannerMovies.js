@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import noBackdrop from '../images/no-backdrop-holder.png';
 
 const BannerMovies = ({ bannerMovies }) => {
-  //console.log(bannerMovies);
-
   return (
     <section className="banner-container">
       <Carousel
@@ -15,6 +13,7 @@ const BannerMovies = ({ bannerMovies }) => {
         interval={10000}
         infiniteLoop={true}
         showArrows={false}
+        useKeyboardArrows={true}
         transitionTime={500}
       >
         {bannerMovies.map((bannerMovie, i) => {
