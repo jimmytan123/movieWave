@@ -10,13 +10,13 @@ import BannerMovies from '../components/BannerMovies';
 const PageHome = () => {
   const [sort, setSort] = useState('popular');
   const [movies, setMovies] = useState(null);
+  const [bannerMovies, setBannerMovies] = useState(null);
   const [pages, setPages] = useState(1);
   const [displayTitle, setDisplayTitle] = useState('Popular');
 
   const globalStateAndActions = useGlobal();
   const globalActions = globalStateAndActions[1];
 
-  const [bannerMovies, setBannerMovies] = useState(null);
   //change tab title when rendering
   useEffect(() => {
     document.title = `${appTitle}`;
@@ -52,7 +52,7 @@ const PageHome = () => {
         //console.log(data.results);
         setMovies(data.results);
 
-        let bannerMoviesData = data.results.slice().splice(0,3);
+        let bannerMoviesData = data.results.slice().splice(0,5);
         //console.log(bannerMoviesData);
         setBannerMovies(bannerMoviesData);
       } catch (err) {
