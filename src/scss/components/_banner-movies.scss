@@ -1,0 +1,64 @@
+@use '../base/variables' as *;
+
+.home-main-section .banner-container {
+  padding: 0;
+  position: relative;
+
+  img.banner-image {
+    display: block;
+    height: 65vh;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+
+  .gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+      to left,
+      hsl(0, 0%, 6%) 0%,
+      hsla(0, 0%, 6%, 0.954) 7.9%,
+      hsla(0, 0%, 6%, 0.894) 15.5%,
+      hsla(0, 0%, 6%, 0.823) 22.9%,
+      hsla(0, 0%, 6%, 0.743) 30.1%,
+      hsla(0, 0%, 6%, 0.656) 37%,
+      hsla(0, 0%, 6%, 0.566) 43.8%,
+      hsla(0, 0%, 6%, 0.474) 50.5%,
+      hsla(0, 0%, 6%, 0.384) 57%,
+      hsla(0, 0%, 6%, 0.297) 63.4%,
+      hsla(0, 0%, 6%, 0.217) 69.6%,
+      hsla(0, 0%, 6%, 0.146) 75.8%,
+      hsla(0, 0%, 6%, 0.086) 81.9%,
+      hsla(0, 0%, 6%, 0.04) 88%,
+      hsla(0, 0%, 6%, 0.01) 94%,
+      hsla(0, 0%, 6%, 0) 100%
+    );
+  }
+
+  h2 {
+    position: absolute;
+    float: right;
+    right: 5%;
+    top: 68%;
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    color: $light;
+  }
+
+  @media (min-width: $breakpoint-mobile) {
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    h2 {
+      font-size: 2.3rem;
+    }
+  }
+}

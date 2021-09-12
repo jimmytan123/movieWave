@@ -5,6 +5,7 @@ import MovieSortSelect from '../components/MovieSortSelect';
 import Movies from '../components/Movies';
 import ChangePageBtn from '../components/ChangePageBtn';
 import { getDate } from '../utilities/date';
+import BannerMovies from '../components/BannerMovies';
 
 const PageHome = () => {
   const [sort, setSort] = useState('popular');
@@ -15,6 +16,7 @@ const PageHome = () => {
   const globalStateAndActions = useGlobal();
   const globalActions = globalStateAndActions[1];
 
+  const [bannerMovies, setBannerMovies] = useState(null);
   //change tab title when rendering
   useEffect(() => {
     document.title = `${appTitle}`;
@@ -47,8 +49,12 @@ const PageHome = () => {
           },
         });
         let data = await res.json();
-        console.log(data.results);
+        //console.log(data.results);
         setMovies(data.results);
+
+        let bannerMoviesData = data.results.slice().splice(0,3);
+        //console.log(bannerMoviesData);
+        setBannerMovies(bannerMoviesData);
       } catch (err) {
         console.log(err.message);
       }
@@ -109,6 +115,7 @@ const PageHome = () => {
 
   return (
     <section className="home-main-section">
+      {bannerMovies && <BannerMovies bannerMovies={bannerMovies} />}
       <MovieSortSelect
         displayTitle={displayTitle}
         handleSortChange={handleSortChange}

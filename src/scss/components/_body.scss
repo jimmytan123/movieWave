@@ -47,8 +47,12 @@ body {
   }
 
   .home-main-section {
-    padding: 0 $medium-spacing;
+    //padding: 0 $medium-spacing;
     width: 100%;
+  }
+
+  .home-main-section > section {
+    padding: 0 $medium-spacing;
   }
 
   // styling for loading spinners
