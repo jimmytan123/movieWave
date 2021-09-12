@@ -60,11 +60,11 @@ const ChangePageBtn = ({
   };
 
   return (
-    <div className="changePageBtn-section">
+    <section className="changePageBtn-section">
       {previousBtn()}
       <div className="page-indicator">{pageDots()}</div>
       {nextBtn()}
-    </div>
+    </section>
   );
 };
 
