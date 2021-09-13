@@ -1,6 +1,7 @@
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // webpack
 import { Carousel } from 'react-responsive-carousel'; //webpack
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // webpack
 import { Link } from 'react-router-dom';
+import { API_IMG_ORGINAL } from '../globals/globalVariables';
 import noBackdrop from '../images/no-backdrop-holder.png';
 
 const BannerMovies = ({ bannerMovies }) => {
@@ -22,7 +23,7 @@ const BannerMovies = ({ bannerMovies }) => {
               <img
                 src={
                   bannerMovie.backdrop_path
-                    ? `https://image.tmdb.org/t/p/original/${bannerMovie.backdrop_path}`
+                    ? `${API_IMG_ORGINAL}${bannerMovie.backdrop_path}`
                     : `${noBackdrop}`
                 }
                 alt={`backdrop of the movie ${bannerMovie.title}`}

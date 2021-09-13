@@ -35,6 +35,25 @@
     margin-bottom: 1rem;
   }
 
+  p.favs-count-msg {
+    text-align: center;
+    padding-top: $base-spacing;
+
+    /* Fallback: Set a background color. */
+    background-color: $site-orange;
+
+    //gradient overlay to error text
+    background-color: $light-grey;
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    background-size: 100%;
+    background-repeat: repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
+
   @media (min-width: $breakpoint-tablet) {
     h2 {
       text-align: left;

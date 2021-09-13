@@ -1,3 +1,4 @@
+//MovieSortSelect.js component, to return a selection dropdown for movie sort
 const MovieSortSelect = ({ displayTitle, handleSortChange }) => {
   //data for option list for form select
   const optionList = [

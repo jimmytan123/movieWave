@@ -1,35 +1,36 @@
 import { useEffect, useState } from 'react';
 import Movies from '../components/Movies';
 import SearchForm from '../components/SearchForm';
-import { appTitle, API_KEY } from '../globals/globalVariables';
 import useGlobal from '../store/globalAppState';
+import { appTitle, API_KEY, API_SEARCH } from '../globals/globalVariables';
 
 const PageSearch = () => {
+  const [movies, setMovies] = useState(null);
+  const [displayTerm, setDisplayTerm] = useState(null);
+  const [searchInputError, setSearchInputError] = useState(null);
+
+  const globalStateAndActions = useGlobal();
+  const globalActions = globalStateAndActions[1];
+
   //change tab title when rendering
   useEffect(() => {
     document.title = `Search - ${appTitle}`;
   }, []);
 
-  const globalStateAndActions = useGlobal();
-  const globalActions = globalStateAndActions[1];
-  
   //ensure local state favs in sync with favs in local storage
   useEffect(() => {
     globalActions.setFavs();
   }, [globalActions]);
 
-  const [movies, setMovies] = useState(null);
-  const [displayTerm, setDisplayTerm] = useState(null);
-  const [searchInputError, setSearchInputError] = useState(null);
-
+  //function to calling API to fetch search result
   const fetchSearchMovies = async (searchTerm) => {
     try {
       const res = await fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${searchTerm}&page=1`
+        `${API_SEARCH}?api_key=${API_KEY}&language=en-US&query=${searchTerm}&page=1`
       );
 
       let data = await res.json();
-      console.log(data.results);
+      //console.log(data.results);
 
       setMovies(data.results);
     } catch (err) {
@@ -37,6 +38,7 @@ const PageSearch = () => {
     }
   };
 
+  //function to accept a query, processing error handling before calling fetchSearchMovies to fetch the data
   const searchMovie = (searchTerm) => {
     searchTerm = searchTerm.trim();
 

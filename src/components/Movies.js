@@ -1,3 +1,4 @@
+//Movies.js component, to return a list of movie cards based on the movies data from API
 import MovieCard from './MovieCard';
 
 const Movies = ({ movies, checkFav }) => {

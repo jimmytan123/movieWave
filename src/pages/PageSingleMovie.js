@@ -1,6 +1,6 @@
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
-import { API_KEY } from '../globals/globalVariables';
+import { API_KEY, API_FETCH } from '../globals/globalVariables';
 import SingleMovie from '../components/SingleMovie';
 import SingleMovieMedia from '../components/SingleMovieMedia';
 import useGlobal from '../store/globalAppState';
@@ -21,7 +21,7 @@ const PageSingleMovie = () => {
     const fetchSingleMovie = async () => {
       try {
         const res =
-          await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos,images,credits
+          await fetch(`${API_FETCH}/${id}?api_key=${API_KEY}&append_to_response=videos,images,credits
         `);
 
         let data = await res.json();

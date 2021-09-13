@@ -30,7 +30,13 @@ const PageFavourites = () => {
           {unFilledHeartIcon} to add some movies here.
         </p>
       ) : (
-        checkReady && <Movies movies={globalState.favs} checkFav={false} />
+        <>
+          {checkReady && <Movies movies={globalState.favs} checkFav={false} />}
+          <p className="favs-count-msg">
+            You have {globalState.favs.length} favourite{' '}
+            {globalState.favs.length === 1 ? 'movie' : 'movies'}
+          </p>
+        </>
       )}
     </section>
   );

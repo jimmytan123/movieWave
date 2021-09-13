@@ -1,9 +1,10 @@
-import { posterEndPoint } from '../globals/globalVariables';
+import { API_IMG780 } from '../globals/globalVariables';
 import { Link } from 'react-router-dom';
 import noPoster from '../images/no-poster-holder.png';
 import FavsBtn from './FavsBtn';
 
 const MovieCard = ({ movie, checkFav }) => {
+  //function to return css classes based on movie rating
   const setRatingScoreClass = () => {
     if (movie.vote_average >= 7) {
       return 'high-score';
@@ -22,7 +23,7 @@ const MovieCard = ({ movie, checkFav }) => {
             <img src={noPoster} alt="no poster" />
           ) : (
             <img
-              src={`${posterEndPoint}${movie.poster_path}`}
+              src={`${API_IMG780}${movie.poster_path}`}
               alt={`poster of ${movie.title}`}
             />
           )}

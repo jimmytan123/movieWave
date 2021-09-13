@@ -1,5 +1,4 @@
 //handle change page, and generating page dots
-
 import { rightArrowIcon, leftArrowIcon } from '../globals/icon';
 
 const ChangePageBtn = ({

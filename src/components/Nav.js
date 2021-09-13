@@ -1,3 +1,4 @@
+//Nav.js component, to return a navigation for header section
 import { NavLink } from 'react-router-dom';
 import { searchIcon } from '../globals/icon';
 import DarkModeToggle from 'react-dark-mode-toggle';

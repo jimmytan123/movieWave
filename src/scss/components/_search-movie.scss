@@ -8,7 +8,6 @@
   flex-direction: column;
   padding: 0;
 
-
   h2.search-heading,
   .movies-grid {
     width: 90%;
@@ -27,6 +26,9 @@
     font-size: $medium-font-size;
     padding: $small-spacing;
     font-weight: 600;
+
+    /* Fallback: Set a background color. */
+    background-color: $site-orange;
 
     //gradient overlay to error text
     background-color: $light-grey;

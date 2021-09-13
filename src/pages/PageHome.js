@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import useGlobal from '../store/globalAppState';
-import { appTitle, API_TOKEN } from '../globals/globalVariables';
+import { appTitle, API_TOKEN, API_FETCH } from '../globals/globalVariables';
+import { getDate } from '../utilities/date';
+import BannerMovies from '../components/BannerMovies';
 import MovieSortSelect from '../components/MovieSortSelect';
 import Movies from '../components/Movies';
 import ChangePageBtn from '../components/ChangePageBtn';
-import { getDate } from '../utilities/date';
-import BannerMovies from '../components/BannerMovies';
 
 const PageHome = () => {
   const [sort, setSort] = useState('popular');
@@ -28,14 +28,14 @@ const PageHome = () => {
 
     /* 
     When fetching upcoming movies, the TMDb API may return some movies that are already released,
-    so add a condition to the endpoint based on the sort state, only returns the movies that will be released in the future when
-    selecting the upcoming filter.
+    so add a condition to the endpoint based on the sort state, only returns the movies that will 
+    be released in the future when selecting the upcoming filter.
     */
     const getEndPoint = () => {
       if (sort === 'upcoming') {
-        return `https://api.themoviedb.org/3/movie/upcoming?&language=en-US&page=${pages}&primary_release_date.gte=${getDate()}`;
+        return `${API_FETCH}/upcoming?&language=en-US&page=${pages}&primary_release_date.gte=${getDate()}`;
       } else {
-        return `https://api.themoviedb.org/3/movie/${sort}?&language=en-US&page=${pages}`;
+        return `${API_FETCH}/${sort}?&language=en-US&page=${pages}`;
       }
     };
 
@@ -49,11 +49,9 @@ const PageHome = () => {
           },
         });
         let data = await res.json();
-        //console.log(data.results);
         setMovies(data.results);
 
-        let bannerMoviesData = data.results.slice().splice(0,5);
-        //console.log(bannerMoviesData);
+        let bannerMoviesData = data.results.slice().splice(0,5); //copy the data.results array and get the first 5 movies for banner section
         setBannerMovies(bannerMoviesData);
       } catch (err) {
         console.log(err.message);
@@ -65,11 +63,8 @@ const PageHome = () => {
 
   const handleSortChange = (e) => {
     const currentSelectedSort = e.target.value;
-    //update the current sort selection state
-    setSort(currentSelectedSort);
-
-    //when sort select changes, set back page to 1 to fetch the first page of the movies
-    setPages(1);
+    setSort(currentSelectedSort);  //update the current sort selection state
+    setPages(1); //when sort select changes, set back page to 1 to fetch the first page of the movies
 
     //update the display text based on sort selection
     switch (currentSelectedSort) {

@@ -1,8 +1,7 @@
 //component for single movie media section (trailers, backdrops)
-
-import { posterEndPoint } from '../globals/globalVariables';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // webpack
+import { API_IMG780 } from '../globals/globalVariables';
 import { Carousel } from 'react-responsive-carousel'; //webpack
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // webpack
 
 const SingleMovieMedia = ({ movieVideos, movieGallery }) => {
   //function to find the first Youtube video result from the fetching movie trailers info
@@ -53,7 +52,7 @@ const SingleMovieMedia = ({ movieVideos, movieGallery }) => {
               return (
                 <div key={i}>
                   <img
-                    src={`${posterEndPoint}${image.file_path}`}
+                    src={`${API_IMG780}${image.file_path}`}
                     alt="gallery of movie"
                   />
                 </div>

@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
-import noPoster from '../images/no-poster-holder.png';
-import { posterEndPoint, appTitle } from '../globals/globalVariables';
+import { API_IMG780, appTitle } from '../globals/globalVariables';
 import FavsBtn from './FavsBtn';
-
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import noPoster from '../images/no-poster-holder.png';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'; //webpack for progress circle
 import 'react-circular-progressbar/dist/styles.css';
 
 const SingleMovie = ({ movie }) => {
@@ -47,7 +46,7 @@ const SingleMovie = ({ movie }) => {
             <img src={noPoster} alt="no poster" />
           ) : (
             <img
-              src={`${posterEndPoint}${movie.poster_path}`}
+              src={`${API_IMG780}${movie.poster_path}`}
               alt={`poster of ${movie.title}`}
             />
           )}
