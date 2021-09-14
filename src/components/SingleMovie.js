@@ -1,9 +1,12 @@
 import { useEffect } from 'react';
-import { API_IMG780, appTitle } from '../globals/globalVariables';
+import { API_IMG780, appTitle, API_IMG500 } from '../globals/globalVariables';
 import FavsBtn from './FavsBtn';
 import noPoster from '../images/no-poster-holder.png';
+import noCastImg from '../images/no-cast-img-holder.png';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'; //webpack for progress circle
 import 'react-circular-progressbar/dist/styles.css';
+
+import SingleMovieMedia from '../components/SingleMovieMedia';
 
 const SingleMovie = ({ movie }) => {
   //change tab title when rendering
@@ -110,9 +113,41 @@ const SingleMovie = ({ movie }) => {
         </div>
       </div>
       {movie.tagline && (
-        <div className="tagline">
+        <section className="tagline">
           <p>{movie.tagline}</p>
-        </div>
+        </section>
+      )}
+      <SingleMovieMedia
+        movieVideos={movie.videos.results}
+        movieGallery={movie.images.backdrops}
+      />
+      {movie.credits.cast && (
+        <section className="cast-info">
+          <h3>Top Billed Cast</h3>
+          <div className='cast-flex-wrapper'>
+            {movie.credits.cast.map((oneCast, i) => {
+              return (
+                <div className="oneCast-info-container" key={i}>
+                  {!oneCast.profile_path ? (
+                    <img
+                      className="cast-img cast-holder-img"
+                      src={noCastImg}
+                      alt="no profile"
+                    />
+                  ) : (
+                    <img
+                      className="cast-img"
+                      src={`${API_IMG500}${oneCast.profile_path}`}
+                      alt={`poster of ${oneCast.name}`}
+                    />
+                  )}
+                  <p className="cast-name">{oneCast.name}</p>
+                  <p className="character-name">{oneCast.character}</p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
       )}
     </>
   );

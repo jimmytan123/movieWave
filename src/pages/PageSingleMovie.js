@@ -2,7 +2,7 @@ import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { API_KEY, API_FETCH } from '../globals/globalVariables';
 import SingleMovie from '../components/SingleMovie';
-import SingleMovieMedia from '../components/SingleMovieMedia';
+//import SingleMovieMedia from '../components/SingleMovieMedia';
 import useGlobal from '../store/globalAppState';
 
 const PageSingleMovie = () => {
@@ -45,10 +45,10 @@ const PageSingleMovie = () => {
         {movieData ? (
           <>
             <SingleMovie movie={movieData} />
-            <SingleMovieMedia
+            {/* <SingleMovieMedia
               movieVideos={movieData.videos.results}
               movieGallery={movieData.images.backdrops}
-            />
+            /> */}
           </>
         ) : (
           <section className="loading-sect">
