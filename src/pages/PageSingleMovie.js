@@ -41,21 +41,13 @@ const PageSingleMovie = () => {
 
   return (
     <section className="singleMovie-main-section">
-      <div className="single-movie">
-        {movieData ? (
-          <>
-            <SingleMovie movie={movieData} />
-            {/* <SingleMovieMedia
-              movieVideos={movieData.videos.results}
-              movieGallery={movieData.images.backdrops}
-            /> */}
-          </>
-        ) : (
-          <section className="loading-sect">
-            <div className="loader">Loading...</div>
-          </section>
-        )}
-      </div>
+      {movieData ? (
+        <SingleMovie movie={movieData} />
+      ) : (
+        <section className="loading-sect">
+          <div className="loader">Loading...</div>
+        </section>
+      )}
     </section>
   );
 };

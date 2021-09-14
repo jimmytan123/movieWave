@@ -42,7 +42,7 @@ const SingleMovie = ({ movie }) => {
   };
 
   return (
-    <>
+    <div className="single-movie">
       <div className="single-movie-main-grid">
         <div className="single-movie-poster">
           {!movie.poster_path ? (
@@ -149,7 +149,7 @@ const SingleMovie = ({ movie }) => {
           </div>
         </section>
       )}
-    </>
+    </div>
   );
 };
 
