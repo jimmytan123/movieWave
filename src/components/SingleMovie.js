@@ -124,7 +124,7 @@ const SingleMovie = ({ movie }) => {
       {movie.credits.cast && (
         <section className="cast-info">
           <h3>Top Billed Cast</h3>
-          <div className='cast-flex-wrapper'>
+          <div className="cast-flex-wrapper">
             {movie.credits.cast.map((oneCast, i) => {
               return (
                 <div className="oneCast-info-container" key={i}>
