@@ -121,7 +121,7 @@ const SingleMovie = ({ movie }) => {
         movieVideos={movie.videos.results}
         movieGallery={movie.images.backdrops}
       />
-      {movie.credits.cast && (
+      {movie.credits.cast.length !== 0 && (
         <section className="cast-info">
           <h3>Top Billed Cast</h3>
           <div className="cast-flex-wrapper">

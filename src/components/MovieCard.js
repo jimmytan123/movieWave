@@ -38,7 +38,7 @@ const MovieCard = ({ movie, checkFav }) => {
           <div className="poster-overlay">
             <p className="hover-release-date">
               Release Date: <br />
-              {movie.release_date}
+              {movie.release_date ? movie.release_date : 'N/A'}
             </p>
             {movie.overview.length === 0 ? (
               <p className="hover-movie-overview">

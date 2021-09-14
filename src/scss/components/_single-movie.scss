@@ -230,7 +230,6 @@
     h3 {
       margin: 0 0 $base-spacing 0;
       padding-bottom: 0.3rem;
-      // border-bottom: 1px solid $light;
       width: 100%;
       text-align: center;
     }
@@ -264,6 +263,7 @@
 
     .oneCast-info-container {
       margin: $small-spacing $base-spacing;
+      padding: 0.3rem 0.5rem;
     }
   }
 
