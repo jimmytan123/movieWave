@@ -87,26 +87,26 @@ const PageHome = () => {
 
   const handleNextPage = () => {
     setPages(pages + 1);
-    scrollToTop();
+    //scrollToTop();
   };
 
   const handlePreviousPage = () => {
     setPages(pages - 1);
-    scrollToTop();
+    //scrollToTop();
   };
 
   const handleChoosePage = (pageNum) => {
     setPages(pageNum);
-    scrollToTop();
+    //scrollToTop();
   };
 
   //function to call when changing pages, scroll to top of the web page
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
+  // const scrollToTop = () => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: 'smooth',
+  //   });
+  // };
 
   return (
     <section className="home-main-section">
