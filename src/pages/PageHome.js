@@ -51,7 +51,7 @@ const PageHome = () => {
         let data = await res.json();
         setMovies(data.results);
 
-        let bannerMoviesData = data.results.slice().splice(0,5); //copy the data.results array and get the first 5 movies for banner section
+        let bannerMoviesData = data.results.slice().splice(0, 5); //copy the data.results array and get the first 5 movies for banner section
         setBannerMovies(bannerMoviesData);
       } catch (err) {
         console.log(err.message);
@@ -63,8 +63,8 @@ const PageHome = () => {
 
   const handleSortChange = (e) => {
     const currentSelectedSort = e.target.value;
-    setSort(currentSelectedSort);  //update the current sort selection state
-    setPages(1); //when sort select changes, set back page to 1 to fetch the first page of the movies
+    setSort(currentSelectedSort); //update the current sort selection state
+    setPages(1); //when sort select changes, set back to page 1 to fetch the first page of the movies
 
     //update the display text based on sort selection
     switch (currentSelectedSort) {
@@ -87,26 +87,15 @@ const PageHome = () => {
 
   const handleNextPage = () => {
     setPages(pages + 1);
-    //scrollToTop();
   };
 
   const handlePreviousPage = () => {
     setPages(pages - 1);
-    //scrollToTop();
   };
 
   const handleChoosePage = (pageNum) => {
     setPages(pageNum);
-    //scrollToTop();
   };
-
-  //function to call when changing pages, scroll to top of the web page
-  // const scrollToTop = () => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: 'smooth',
-  //   });
-  // };
 
   return (
     <section className="home-main-section">
