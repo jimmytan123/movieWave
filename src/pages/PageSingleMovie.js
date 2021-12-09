@@ -25,7 +25,7 @@ const PageSingleMovie = () => {
         `);
 
         let data = await res.json();
-        console.log(data);
+        //console.log(data);
         setMovieData(data);
       } catch (err) {
         console.log(err.message);
